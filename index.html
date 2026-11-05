@@ -150,6 +150,8 @@
   .scene-t{align-self:center;padding-bottom:6px;min-width:0;z-index:1}
   .scene-t .ps{color:#7fff5f}
   .scene-t .ps.dim{color:#77757f}
+  .scene-t .iglink{display:inline-block;color:#fff;text-decoration:none;border-bottom:2px solid #7fff5f;padding-bottom:3px}
+  .scene-t .iglink:hover{color:#7fff5f}
   .scene-t h3{font-family:'Press Start 2P',monospace;font-weight:400;font-size:clamp(14px,2.6vw,22px);line-height:1.35;color:#fff;margin:10px 0 8px}
 
   /* barra de abajo */
@@ -1528,7 +1530,7 @@ function printAll(){
    ════════════════════════════════════════════════════════════════════ */
 function rebuild(){
   tin.innerHTML = '<div class="intro"><img class="logo" src="'+(LOGO_A||LOGO)+'" alt="Larry Prod"'+(LOGO_A?'':' style="opacity:0"')+'><h1>Tu marca en '+STEPS.length+' pasos.</h1><div class="byline">by <a href="https://www.instagram.com/larry.prod" target="_blank" rel="noopener">@larry.prod</a></div><div class="ps">CHAT PRIVADO · SE GUARDA SOLO</div></div>'
-    + (()=>{ const ST = studioLayers(); return '<div class="scene" id="sc-cover"><div class="sbox">'+ST.back+'<div class="larry" data-frame="base"><div class="bob">'+LARRY_SVG.base+'</div></div>'+propHTML(GUIDE_COVER,'')+'</div><div class="scene-t"><span class="ps">TU GUÍA</span><h3>Larry</h3><span class="ps dim">PRODUCTOR · @LARRY.PROD</span></div></div>'; })();
+    + (()=>{ const ST = studioLayers(); return '<div class="scene" id="sc-cover"><div class="sbox">'+ST.back+'<div class="larry" data-frame="base"><div class="bob">'+LARRY_SVG.base+'</div></div>'+propHTML(GUIDE_COVER,'')+'</div><div class="scene-t"><span class="ps">TU GUÍA</span><h3>Larry</h3><a class="ps dim iglink" href="https://www.instagram.com/larry.prod" target="_blank" rel="noopener">PRODUCTOR · @LARRY.PROD ↗</a></div></div>'; })();
   setSide(null, true);
   pos = Math.min(pos, SCRIPT.length);
   for(let i=0; i<pos; i++){
