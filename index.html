@@ -112,8 +112,8 @@
   .bub .hint{font-size:14.5px;color:#5f5a52;margin-top:6px;line-height:1.42}
   .bub .ex{margin-top:9px;background:#f6f3ec;border:2px dashed #cfc7b7;padding:7px 10px;font-size:14.5px;color:#3d3a35;line-height:1.4}
   .bub .ex strong{font-weight:700;color:#141414}
-  .bub .vt b,.bub .hint b{font-weight:700;color:#000}
-  .bub .vt b{-webkit-text-stroke:.45px #000}
+  .bub .vt b{font-weight:700;color:#000}
+  .bub .hint b{font-weight:600;color:#2a2722}
   .bub .vt u,.bub .hint u{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
   .bub.hito{background:#ffd54a;box-shadow:4px 4px 0 #000;position:relative;padding-top:24px}
   .bub.hito::before{content:'★ CLAVE';position:absolute;left:12px;top:8px;font-family:'Press Start 2P',monospace;font-size:7.5px;color:#7a5a00}
@@ -1243,7 +1243,12 @@ function sceneHTML(b, live){
 }
 /* "Luna" (la artista de ejemplo) siempre en negrita en lo que dice Larry */
 const NS = 'Todavía no lo sé';
-function fmt(t){ return esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/__(.+?)__/g, '<u>$1</u>'); }
+/* Lo marcado con **…** sale en negrita en unos mensajes y subrayado en otros (nunca las dos en el mismo). */
+function fmt(t){
+  let h = 0; for(let i=0;i<t.length;i++) h = (h*31 + t.charCodeAt(i)) >>> 0;
+  const tag = (h % 5 < 2) ? 'u' : 'b';
+  return esc(t).replace(/\*\*(.+?)\*\*/g, '<'+tag+'>$1</'+tag+'>').replace(/__(.+?)__/g, '<u>$1</u>');
+}
 function lunaB(h){ return h.replace(/>([^<]*)/g, (m, t) => '>' + t.replace(/\bLuna\b/g, '<b class="lb">Luna</b>')); }
 function larryPart(b, live){
   if(b.k==='say'){ const t = b.html ? null : (b.fn ? b.fn() : b.t); const hito = !!t && t.charAt(0)==='!';
