@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Manual de Marca v3 · @larry.prod</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&family=Caveat:wght@600&family=Special+Elite&family=DM+Mono:wght@400;500&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&family=Caveat:wght@600&family=Special+Elite&family=DM+Mono:wght@400;500&family=Press+Start+2P&family=VT323&family=Playfair+Display:wght@700&family=Permanent+Marker&family=Baloo+2:wght@700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0a0a0a; --card:#131313; --card2:#1a1a1a; --line:#272727; --line2:#353535;
@@ -66,7 +66,8 @@
   .route button.cur{border-color:#fff;background:#18181f;color:#fff;box-shadow:3px 3px 0 #000}
   .route button.lock{opacity:.38;cursor:default}
   .route button.lock:hover{background:transparent}
-  .side-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:10px;border-top:2px solid #1d1d24}
+  .side-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 10px;border:2px solid #2c2c36;background:rgba(0,0,0,.25);white-space:nowrap}
+  .side-foot .saved,.side-foot .linkbtn{font-size:16px}
   .saved{font-family:'VT323',monospace;font-size:18px;color:#615e58}
   .linkbtn{background:none;border:none;color:#77757f;font-family:'VT323',monospace;font-size:18px;cursor:pointer}
   .linkbtn:hover{color:#fff}
@@ -111,6 +112,34 @@
   .bub .hint{font-size:14.5px;color:#5f5a52;margin-top:6px;line-height:1.42}
   .bub .ex{margin-top:9px;background:#f6f3ec;border:2px dashed #cfc7b7;padding:7px 10px;font-size:14.5px;color:#3d3a35;line-height:1.4}
   .bub .ex strong{font-weight:700;color:#141414}
+  .bub .vt b,.bub .hint b{font-weight:700}
+  .bub .vt b{-webkit-text-stroke:.7px currentColor}
+  .bub.hito{background:#ffd54a;box-shadow:4px 4px 0 #000;position:relative;padding-top:24px}
+  .bub.hito::before{content:'★ CLAVE';position:absolute;left:12px;top:8px;font-family:'Press Start 2P',monospace;font-size:7.5px;color:#7a5a00}
+  .bub.hito .vt{font-size:27px;line-height:1.08;-webkit-text-stroke:.5px #141414}
+  .ladder2{display:flex;flex-direction:column;align-items:center;gap:5px}
+  .ladder2 .lv{position:relative;display:flex;align-items:center;gap:12px;padding:10px 14px;color:#fff;border:2px solid #000;box-shadow:3px 3px 0 #000;min-height:58px}
+  .ladder2 .lv .tx{flex:1;min-width:0;line-height:1.25}
+  .ladder2 .lv b{display:block;font-family:'Press Start 2P',monospace;font-weight:400;font-size:8px;letter-spacing:.04em;opacity:.85;margin-bottom:4px}
+  .ladder2 .lv i{font-style:normal;display:block;font-size:12.5px;opacity:.85}
+  .ladder2 .lv .pp{flex:none;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:3px;max-width:80px}
+  .ladder2 .lv .pp i{width:7px;height:7px;background:currentColor;opacity:.8}
+  .ladder2 .lv.me .pp i{width:12px;height:12px;background:#000;opacity:1}
+  .ladder2 .lv.me{color:#000;outline:3px dashed #000;outline-offset:3px}
+  .ladder2 .lv.me b{opacity:1}
+  .ladder2 .arrow{font-family:'Press Start 2P',monospace;font-size:8px;color:var(--muted);margin:8px 0 2px;text-align:center;line-height:1.6}
+  .reelsteps{display:grid;gap:8px}
+  .reelsteps div{display:flex;gap:12px;align-items:flex-start;background:#fff;border:2px solid var(--line2);padding:10px 12px}
+  .reelsteps .n{flex:none;width:28px;height:28px;background:#151515;color:#fff;font-family:'Press Start 2P',monospace;font-size:10px;display:flex;align-items:center;justify-content:center}
+  .reelsteps p{font-size:14.5px;line-height:1.4}
+  .reelsteps em{display:block;font-style:normal;margin-top:4px;color:#3d3a35;background:#fff6cf;border-left:3px solid #ffd54a;padding:3px 8px}
+  .fpick{margin-top:12px}
+  .fpick input{width:100%;background:#fff;border:2px solid #000;color:#151515;padding:11px 13px;font-family:'Barlow';font-size:16px;outline:none}
+  .flist{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin-top:8px;max-height:260px;overflow:auto}
+  .fbtn{background:#fff;border:2px solid var(--line2);color:#151515;padding:10px;text-align:left;cursor:pointer;font-size:18px;line-height:1.1}
+  .fbtn small{display:block;font-family:'Barlow',sans-serif;font-size:11px;color:#8f897e;margin-top:4px}
+  .fbtn.sel{border-color:#151515;box-shadow:0 0 0 1px #151515 inset;background:#fffbe9}
+  .fbtn.use{border-style:dashed}
   .bub b.lb,.bub .ex b.lb{font-weight:700;display:inline;font-family:inherit;font-size:inherit;color:inherit;margin:0;-webkit-text-stroke:.6px currentColor}
   .bub .ex b{display:block;font-family:'Press Start 2P',monospace;font-size:7.5px;color:#8f897e;margin-bottom:5px;font-weight:400}
   .bub .grp{display:inline-block;font-family:'Press Start 2P',monospace;font-size:8.5px;background:#141414;color:#fff;padding:5px 7px;margin-bottom:9px}
@@ -433,8 +462,8 @@
     <div class="side-stage" id="sideStage"></div>
     <div class="who"><b>LARRY</b><span class="stat" id="sideStat">● en línea</span></div>
     <div class="handle"><a href="https://www.instagram.com/larry.prod" target="_blank" rel="noopener">@larry.prod</a> · tu guía</div>
-    <div class="route" id="route"></div>
     <div class="side-foot"><span class="saved" id="savedLbl">✓ se guarda solo</span><button class="linkbtn" id="resetBtn">↺ empezar de nuevo</button></div>
+    <div class="route" id="route"></div>
   </aside>
   <div id="scrim"></div>
 
@@ -661,14 +690,17 @@ const PHOTOS = {"apollo":"data:image/jpeg;base64,/9j/4gIcSUNDX1BST0ZJTEUAAQEAAAI
    CONTENIDO — los pasos (src/steps.js). Luna es la artista de ejemplo.
    Tipos de campo: text · area · chips · suggest · choice · colors · yesno · traps
    ════════════════════════════════════════════════════════════════════ */
+/* Cómo se escriben los mensajes de Larry:
+   **así** = negrita (lo importante de cada frase)
+   ! al principio = frase clave resaltada (cartel amarillo) */
 const STEPS = [
 {
   id:'cap1', t:'Punto de partida', min:3,
-  guide:{"anim":"slide","prop":"flag","lines":["Primera parada: ver dónde estás hoy.","Son toques rápidos y no hay respuestas malas. Si no sabés qué es algo, poné \"Todavía no\" y seguí."]},
+  guide:{"anim":"slide","prop":"flag","lines":["Primera parada: **ver dónde estás hoy.**","Son toques rápidos y **no hay respuestas malas.** Si no sabés qué es algo, poné **\"Todavía no\"** y seguí."]},
   why:'Antes de construir nada, mirá <b>dónde estás hoy</b>. Son toques rápidos: no hay respuestas malas, es solo tu foto de hoy.',
   fields:[
-    {id:'p_nombre', kind:'text', label:'¿Cuál es tu nombre de artista?', hint:'Lo vas a ver aparecer en tu feed, tu perfil y tu tarjeta.', ex:'Luna Vega', ph:'Como aparece en Spotify'},
-    {id:'d_check', kind:'yesno', label:'¿Esto ya lo tenés?', hint:'Tocá Sí o Todavía no en cada línea. Si no sabés qué es algo, poné Todavía no.',
+    {id:'p_nombre', kind:'text', label:'¿Cuál es tu nombre de artista?', hint:'Lo vas a ver aparecer en **tu feed, tu perfil y tu tarjeta.**', ex:'Luna Vega', ph:'Como aparece en Spotify'},
+    {id:'d_check', kind:'yesno', label:'¿Esto ya lo tenés?', hint:'Tocá **Sí** o **Todavía no** en cada línea. Si no sabés qué es algo, poné Todavía no.',
      items:[
       'Sé qué estilo de música hago, en palabras concretas (no solo "trap" o "pop")',
       'Mi bio de Instagram dice quién soy en menos de dos frases',
@@ -676,7 +708,7 @@ const STEPS = [
       'Uso Spotify for Artists (la app gratis de Spotify para artistas)',
       'Puedo nombrar 3 artistas nuevos de mi estilo que suben buen contenido'
      ]},
-    {id:'d_traps', kind:'traps', label:'¿En cuál de estas trampas caés?', hint:'Tocá las que te pasan (pueden ser varias). Te muestro cómo salir.',
+    {id:'d_traps', kind:'traps', label:'¿En cuál de estas trampas caés?', hint:'Tocá las que te pasan (**pueden ser varias**). Te muestro cómo salir.',
      items:[
       {e:'🎁', t:'Solo muestro el final', d:'Publico el tema cuando sale, pero nada del proceso.', fix:'→ Paso 5: mostrá el proceso mientras pasa.'},
       {e:'🏷️', t:'Espero a una discográfica', d:'Creo que la marca viene después de firmar con un sello.', fix:'→ Hoy es al revés: la marca atrae al sello.'},
@@ -688,21 +720,23 @@ const STEPS = [
   deep:`<p>Si alguien entra hoy a tu perfil, ¿entiende en 5 segundos qué música hacés y cuál es tu estilo? A la mayoría de los artistas con talento les falla eso. No porque no tengan nada para mostrar, sino porque no lo muestran claro.</p><p style="margin-top:8px"><b>No pasa nada si contestaste "Todavía no" a todo.</b> Para eso está este manual.</p>`
 },
 {
-  id:'cap2', t:'Tu sonido', min:10,
-  guide:{"anim":"jump","prop":"note","lines":["Ahora, tu sonido. La pregunta es: ¿por qué vos y no otro artista de tu género?","Mirá la escalera: cuanto más concreto, menos competencia. Te voy a pedir tu sonido, tu historia y tu opinión."]},
-  why:'Respondé <b>¿por qué yo y no otro artista de mi género?</b> Cuanto más concreto seas, menos competencia tenés. Son 3 cosas distintas: <b>tu sonido, tu historia y tu opinión</b>.',
+  id:'cap2', t:'Tu sonido', min:12,
+  guide:{"anim":"jump","prop":"note","lines":["Ahora, **tu sonido.** La pregunta de esta parada es una sola:","!¿Por qué vos y no otro artista de tu género?","Mirá la escalera: **cuanto más concreto, menos competencia.** Te voy a pedir **tu sonido, tu historia y tu opinión.**"]},
+  why:'Respondé <b>¿por qué yo y no otro artista de mi género?</b>',
   visual:'ladder',
   fields:[
-    {id:'s_genero', kind:'suggest', label:'¿Qué música hacés?', hint:'Tocá tu género y sumá UNA palabra que lo haga tuyo: de desamor, lo-fi, con guitarra, desde tu barrio…',
+    {id:'s_genero', kind:'suggest', label:'¿Qué música hacés?', hint:'Tocá tu género y sumá **UNA palabra que lo haga tuyo:** de desamor, lo-fi, con guitarra, desde tu barrio…',
      ex:'R&B alternativo con guitarra acústica', ph:'Ej: trap de desamor lo-fi',
      chips:['Trap','R&B','Pop','Reggaetón','Indie','Rap','Rock','Electrónica','Cantautor','Flamenco fusión','Cumbia']},
-    {id:'s_refs', kind:'text', label:'¿A qué 3 artistas te parecés (o te gustaría parecerte)?', hint:'Separalos con comas. Pueden ser famosos.',
+    {id:'s_refs', kind:'text', label:'¿A qué 3 artistas te parecés (o te gustaría parecerte)?', hint:'Separalos con comas. **Pueden ser famosos.**',
      ex:'SZA, Daniel Caesar, Rosalía', ph:'Artista 1, artista 2, artista 3'},
-    {id:'s_dif', kind:'area', label:'Tu sonido: ¿qué tiene tu música que no tienen ellos?', hint:'Algo que se escucha: tu idioma, un instrumento, tu acento, un tema del que siempre hablás.',
+    {id:'s_dif', kind:'area', label:'Tu sonido: ¿qué tiene tu música que no tienen ellos?', hint:'**Algo que se escucha:** tu idioma, un instrumento, tu acento, un tema del que siempre hablás.',
      ex:'Letras en español sobre crecer lejos de casa, con guitarra y voz muy íntima'},
-    {id:'s_hist', kind:'area', label:'Tu historia: ¿qué viviste que está en tus canciones?', hint:'Una situación real. No hace falta que sea dramática, tiene que ser tuya.',
+    {id:'s_halago', kind:'area', label:'Cuando mostrás tus canciones, ¿qué es lo que más te halagan?', hint:'Pensá en lo que te dicen amigos, familia o gente que te escucha: "tu voz me eriza", "parece que lo escribiste para mí"… **Eso que te repiten es una pista de lo que te hace único.**',
+     ex:'Que mis letras parecen un diario y que mi voz suena muy cerca, como si me tuvieras al lado'},
+    {id:'s_hist', kind:'area', label:'Tu historia: ¿qué viviste que está en tus canciones?', hint:'**Una situación real.** No hace falta que sea dramática, tiene que ser tuya.',
      ex:'Me mudé sola a otra ciudad a los 19 y escribía de noche porque no conocía a nadie'},
-    {id:'s_persp', kind:'area', label:'Tu opinión: ¿qué idea sobre la música defendés?', opt:true, hint:'Algo que pensás aunque no todos estén de acuerdo. En el Paso 5 lo usás para un video.',
+    {id:'s_persp', kind:'area', label:'Tu opinión: ¿qué idea sobre la música defendés?', opt:true, hint:'Algo que pensás **aunque no todos estén de acuerdo.** En el Paso 5 lo usás para un video.',
      ex:'No hace falta un estudio caro para sonar honesta'}
   ],
   done:[
@@ -710,21 +744,21 @@ const STEPS = [
     'Tengo 3 artistas de referencia',
     'Sé qué me hace distinto a ellos'
   ],
-  deep:`<h4>Los 3 ejes del posicionamiento</h4><ul><li><b>Sonido:</b> género + subgénero + referencias. Ej: R&B alternativo con soul de los 70 y electrónica mínima.</li><li><b>Historia:</b> lo que viviste y te llevó a hacer esta música. Eso genera fans fieles, no las reproducciones.</li><li><b>Opinión:</b> tu postura sobre la música, la industria o la vida. Sin esto sos uno más.</li></ul><h4>Lo técnico también cuenta</h4><p>La historia te diferencia, pero el sonido tiene que estar a la altura. Nicho claro + sonido profesional = no falla.</p><h4>Robá principios, no copias</h4><p>Estudiá a los que funcionan y preguntate por qué hacen lo que hacen. Tomá el principio y hacelo a tu manera: copiar te hace reemplazable.</p><h4>No buscás virales, buscás fans</h4><p>Un viral que no tiene que ver con quién sos no construye nada. Querés gente que te siga por lo que sos.</p>`
+  deep:`<h4>Los 3 ejes del posicionamiento</h4><ul><li><b>Sonido:</b> género + subgénero + referencias. Ej: R&B alternativo con soul de los 70 y electrónica mínima.</li><li><b>Historia:</b> lo que viviste y te llevó a hacer esta música. Eso genera fans fieles, no las reproducciones.</li><li><b>Opinión:</b> tu postura sobre la música, la industria o la vida. Sin esto sos uno más.</li></ul><h4>Lo técnico también cuenta</h4><p>La historia te diferencia, pero el sonido tiene que estar a la altura: que la gente sienta que tu canción es <b>profesional y seria, no un demo.</b></p><h4>Robá principios, no copias</h4><p>Estudiá a los que funcionan y preguntate por qué hacen lo que hacen. Tomá el principio y hacelo a tu manera: copiar te hace reemplazable.</p><h4>No buscás virales, buscás fans</h4><p>Un viral que no tiene que ver con quién sos no construye nada. Querés gente que te siga por lo que sos.</p>`
 },
 {
   id:'cap3', t:'Tu oyente', min:8,
-  guide:{"anim":"pop","prop":"heart","lines":["Tu oyente. No le podés hablar a todo el mundo.","Imaginá a UNA persona que se emociona con tus temas. Con lo que elijas te tiro una idea de reel."]},
-  why:'No le podés hablar a todo el mundo. <b>Imaginá a UNA persona</b> que escucha tu música y escribile a ella. El algoritmo después encuentra a más gente como ella.',
+  guide:{"anim":"pop","prop":"heart","lines":["Tu oyente. **No le podés hablar a todo el mundo.**","Imaginá a **UNA persona** que se emociona con tus temas. Con lo que elijas **te tiro una idea de reel.**"]},
+  why:'No le podés hablar a todo el mundo.',
   visual:'persona',
   fields:[
-    {id:'o_nombre', kind:'text', label:'Imaginá a UNA persona que te escucha: nombre, edad y ciudad', hint:'Puede ser real o inventada. Si te escucha gente de todas las edades, elegí a la que más se emociona con tus temas.',
+    {id:'o_nombre', kind:'text', label:'Imaginá a UNA persona que te escucha: nombre, edad y ciudad', hint:'**Puede ser real o inventada.** Si te escucha gente de todas las edades, elegí a la que más se emociona con tus temas.',
      ex:'Marta, 24, Madrid (la oyente que imaginó Luna)', ph:'Nombre, edad, ciudad'},
-    {id:'o_dia', kind:'text', label:'¿Qué hace durante el día?', ex:'Estudia diseño y trabaja en un bar los findes', ph:'Estudia, trabaja de…, vive con…'},
-    {id:'o_momento', kind:'chips', multi:true, max:3, label:'¿En qué momento pone tu música?', hint:'Con la primera que elijas te sugiero una idea de reel arriba.',
+    {id:'o_dia', kind:'text', label:'¿Qué hace durante el día?', hint:'Cómo se viste, qué le gusta, dónde está: **cuanto más la conozcas, mejor le hablás.**', ex:'Estudia diseño y trabaja en un bar los findes', ph:'Estudia, trabaja de…, vive con…'},
+    {id:'o_momento', kind:'chips', multi:true, max:3, label:'¿En qué momento pone tu música?', hint:'Con la primera que elijas **te sugiero una idea de reel.**',
      ex:'De noche sin poder dormir, Viajando sola en transporte',
      chips:['De noche sin poder dormir','Viajando sola/o en transporte','Después de una ruptura','Para concentrarse','Entrenando o caminando','Antes de salir de fiesta','En el coche']},
-    {id:'o_artistas', kind:'text', label:'¿Qué otros artistas tiene en su playlist?', hint:'Pueden ser los mismos que escuchás vos.',
+    {id:'o_artistas', kind:'text', label:'¿Qué otros artistas tiene en su playlist?', hint:'**Pueden ser los mismos que escuchás vos.**',
      ex:'Rels B, Cupido, SZA', ph:'Artista, artista, artista'},
     {id:'o_siente', kind:'chips', multi:true, max:3, label:'¿Qué busca sentir cuando te escucha?',
      ex:'Que alguien ponga en palabras lo que siente',
@@ -738,78 +772,88 @@ const STEPS = [
 },
 {
   id:'cap4', t:'Tu imagen y tu perfil', min:15,
-  guide:{"anim":"slide","prop":"phone","lines":["Tu imagen y tu perfil. La gente decide en 5 segundos si se queda.","Elegí tus colores, tu letra y tu estilo, y mirá cómo se arma tu Instagram en el teléfono."]},
-  why:'Antes de escucharte, la gente pasa por tu perfil: <b>tenés 5 segundos</b>. No hace falta cámara cara: <b>hace falta que todo parezca del mismo mundo.</b> Elegí tus reglas y mirá cómo queda tu Instagram.',
+  guide:{"anim":"slide","prop":"phone","lines":["Tu imagen y tu perfil. Con cada video **va a llegar gente nueva** a tu Instagram.","!Lo que tenemos que lograr: que en 5 segundos esa persona decida quedarse.","Para eso tu perfil necesita **3 cosas: una bio clara, un link directo y 3 videos fijados.** Arrancamos por tu estilo: **colores, letra y clima.**"]},
+  why:'Antes de escucharte, la gente pasa por tu perfil: <b>tenés 5 segundos</b>.',
   visual:'feed',
   fields:[
-    {id:'v_colores', group:'🎨 Tu estilo', kind:'colors', label:'Elegí tus 4 colores fijos', hint:'Tocá cada cuadrado para cambiarlo. Si te gustan los que vienen, dejalos y seguí.',
+    {id:'v_colores', group:'🎨 Tu estilo', kind:'colors', label:'Elegí tus 4 colores fijos', hint:'Tocá cada cuadrado para cambiarlo. **Si te gustan los que vienen, dejalos y seguí.**',
      ex:'Azul noche, crema, naranja vela, negro'},
-    {id:'v_tipo', group:'🎨 Tu estilo', kind:'choice', label:'¿Cómo se ven tus textos en pantalla?', hint:'Elegí la letra que más se parece a tu música.',
-     options:[{v:'Gruesa y en MAYÚSCULAS',s:'Fuerte, directa'},{v:'Fina y elegante',s:'Calma, cuidada'},{v:'Escrita a mano',s:'Íntima, cercana'},{v:'Máquina de escribir',s:'Cruda, retro'}]},
-    {id:'v_mood', group:'🎨 Tu estilo', kind:'chips', multi:true, max:2, label:'¿A qué momento suena tu música?', hint:'Elegí 1 o 2. Esto define la luz y el clima de lo que grabes.',
+    {id:'v_tipo', group:'🎨 Tu estilo', kind:'choice', label:'¿Cómo se ven tus textos en pantalla?', hint:'Elegí la letra que más se parece a tu música. **¿Ninguna te convence? Tocá 🔎 y buscá la que quieras.**',
+     options:[{v:'Gruesa y en MAYÚSCULAS',s:'Fuerte, directa'},{v:'Fina y elegante',s:'Calma, cuidada'},{v:'Escrita a mano',s:'Íntima, cercana'},{v:'Máquina de escribir',s:'Cruda, retro'},{v:'Clásica con serifa',s:'Seria, atemporal'},{v:'Graffiti',s:'Calle, urbana'},{v:'Redondeada',s:'Dulce, amigable'},{v:'Retro 8 bits',s:'Gamer, nostálgica'}]},
+    {id:'v_mood', group:'🎨 Tu estilo', kind:'chips', multi:true, max:2, label:'¿A qué momento suena tu música?', hint:'Elegí 1 o 2. **Esto define la luz y el clima** de lo que grabes.',
      ex:'3 AM en el cuarto, con luces de colores',
      chips:['3 AM en el cuarto','Noche de ciudad','Atardecer en la terraza','Previa con amigos','En la ruta, sola/o','Barrio de día','Domingo tranquilo en casa']},
-    {id:'v_valores', group:'🎨 Tu estilo', kind:'chips', multi:true, max:3, label:'Elegí hasta 3 palabras que te representan', hint:'Antes de publicar algo, preguntate: ¿encaja con estas palabras? Si no, no va.',
+    {id:'v_valores', group:'🎨 Tu estilo', kind:'chips', multi:true, max:3, label:'Elegí hasta 3 palabras que te representan', hint:'Antes de publicar algo, preguntate: **¿encaja con estas palabras?** Si no, no va.',
      ex:'Honestidad, Calma, Raíces',
      chips:['Honestidad','Calma','Rebeldía','Nostalgia','Energía','Libertad','Elegancia','Humor','Crudeza','Ternura','Ambición','Raíces']},
-    {id:'p_ciudad', group:'📱 Tu perfil', kind:'text', label:'¿Desde qué ciudad hacés música?', ex:'Valencia', ph:'Ciudad'},
-    {id:'p_frase', group:'📱 Tu perfil', kind:'text', label:'Una frase corta que te define', hint:'Pensá en lo que busca sentir tu oyente (Paso 3). Evitá "música desde el alma".',
+    {id:'p_ciudad', group:'📱 Tu bio en 3 partes', kind:'text', label:'Parte 1 · Qué sos: ¿desde qué ciudad hacés música?', hint:'La primera línea de tu bio dice **qué sos y qué cantás** en una oración cortita. La armo con tu género y tu ciudad.', ex:'Valencia', ph:'Ciudad'},
+    {id:'p_frase', group:'📱 Tu bio en 3 partes', kind:'text', label:'Parte 2 · Una frase que le hable a tu oyente', hint:'**Hablale a la persona del Paso 3:** en qué situación está, para quién está hecha tu música. Evitá "música desde el alma".',
      ex:'Canciones para cuando no podés dormir', ph:'Máximo una línea'},
-    {id:'p_link', group:'📱 Tu perfil', kind:'choice', label:'¿A dónde lleva el link de tu bio?', hint:'Nunca lo dejes vacío. Si dudás, elegí tu Spotify.',
-     options:[{v:'Mi perfil de Spotify',s:'Si no estás por lanzar'},{v:'Pre-save del próximo tema',s:'Link para que guarden tu tema antes de que salga'},{v:'Linktree',s:'Una página gratis con todos tus links (linktr.ee)'}]},
-    {id:'p_reels', group:'📱 Tu perfil', kind:'area', label:'¿Qué 3 videos vas a fijar arriba de tu perfil?', hint:'Uno que muestre tu sonido, uno tu historia y uno cómo hablás. ¿Todavía no tenés? Escribí cuáles grabarías primero. Escribilos así: 1) … 2) … 3) …',
-     ex:'1) Acústico en mi cuarto  2) La historia de "Valencia"  3) Por qué escribo de noche'},
-    {id:'v_refs', group:'➕ Si querés ir más lejos', kind:'area', opt:true, label:'¿Qué artista tiene un Instagram que te encanta? ¿Qué copiarías de cómo se ve?', hint:'Copiar la idea, no el contenido. No tiene que ser de tu género.',
+    {id:'p_cta', group:'📱 Tu bio en 3 partes', kind:'suggest', label:'Parte 3 · Tu llamada a la acción', hint:'Parece una tontería pero **funciona:** cuando la gente lo lee, entiende que tenés un tema para escuchar. Tocá una o escribí la tuya.',
+     ex:'🎧 Ya podés escuchar "Valencia" ↓', ph:'Ej: 🎧 Ya podés escuchar mi nuevo tema ↓',
+     chips:['🎧 Ya podés escuchar mi nuevo tema ↓','Nuevo single ya disponible ↓','Escuchá mi música acá ↓','Pre-save de mi próximo tema ↓']},
+    {id:'p_link', group:'🔗 Tu link', kind:'choice', label:'¿A dónde lleva el link de tu bio?', hint:'**Nunca lo dejes vacío.** Lo que más recomiendo es Linktwin (linktw.in): un link gratis que **abre directo la app** de cada persona (Spotify, Apple Music, YouTube).',
+     options:[{v:'Linktwin con mi tema',s:'Recomendado: abre directo las apps'},{v:'Mi perfil de Spotify',s:'Si todavía no tenés tema nuevo'},{v:'Pre-save del próximo tema',s:'Para que lo guarden antes de que salga'}]},
+    {id:'p_fij1', group:'📌 Tus 3 videos fijados', kind:'area', short:true, label:'Fijado 1 · Credibilidad: ¿qué video demuestra que lo de tu bio es real?', hint:'Un pedacito de **un show, tu videoclip o una sesión en el estudio.** Si todavía no lo tenés, escribí cuál grabarías.',
+     ex:'Un fragmento cantando "Valencia" en vivo en un bar'},
+    {id:'p_fij2', group:'📌 Tus 3 videos fijados', kind:'area', short:true, label:'Fijado 2 · Conexión: ¿qué video le habla a tu oyente?', hint:'**Que se sienta identificado:** "pasé por esta situación y escribí esta canción".',
+     ex:'La historia de "Valencia": me mudé sola y escribía de noche'},
+    {id:'p_fij3', group:'📌 Tus 3 videos fijados', kind:'area', short:true, label:'Fijado 3 · Cercanía: ¿qué video te muestra como persona?', hint:'**Que te sientan alcanzable:** un detrás de escena, vos hablando a cámara, respondiendo a tu público.',
+     ex:'Detrás de escena grabando la voz en mi cuarto con una manta'},
+    {id:'v_refs', group:'➕ Si querés ir más lejos', kind:'area', opt:true, label:'¿Qué artista tiene un Instagram que te encanta? ¿Qué copiarías de cómo se ve?', hint:'**Copiar la idea, no el contenido.** No tiene que ser de tu género.',
      ex:'Rosalía: colores fuertes, fotos quietas y casi sin texto'},
-    {id:'v_miro', group:'➕ Si querés ir más lejos', kind:'text', opt:true, label:'Link de tu tablero de inspiración (moodboard)', hint:'Un moodboard es un collage con fotos, colores y videos que se sienten como tu música. Se arma en 15 min: entrá gratis a miro.com (o usá Pinterest), pegá 10 imágenes y tus 4 colores. Miralo antes de grabar.',
+    {id:'v_miro', group:'➕ Si querés ir más lejos', kind:'text', opt:true, label:'Link de tu tablero de inspiración (moodboard)', hint:'Un moodboard es **un collage con fotos, colores y videos que se sienten como tu música.** Se arma en 15 min: entrá gratis a miro.com (o usá Pinterest), pegá 10 imágenes y tus 4 colores. Miralo antes de grabar.',
      ph:'https://miro.com/… o pinterest.com/…'},
-    {id:'p_spotify', group:'➕ Si querés ir más lejos', kind:'area', opt:true, label:'Tu bio de Spotify', hint:'Si todavía no usás Spotify for Artists, saltealo. Si sí: tocá ✨ y retocá el borrador que se arma con tus respuestas.',
+    {id:'p_spotify', group:'➕ Si querés ir más lejos', kind:'area', opt:true, label:'Tu bio de Spotify', hint:'Si todavía no usás Spotify for Artists, saltealo. Si sí: **tocá ✨ y retocá el borrador** que se arma con tus respuestas.',
      ex:'Luna Vega hace R&B alternativo desde Valencia…', tall:true, tpl:true}
   ],
   done:[
     {t:'Tengo mis 4 colores, mi letra y mis 3 palabras'},
     {t:'Foto de perfil clara, donde se te ve la cara', s:'Que se reconozca en chiquito.'},
-    {t:'Bio en 2 líneas (copiala del botón de arriba)'},
-    {t:'Link en bio funcionando'},
-    {t:'3 videos fijados arriba'},
+    {t:'Bio en 3 partes: qué soy, para quién canto y la llamada a la acción'},
+    {t:'Link en bio funcionando (ideal: Linktwin)'},
+    {t:'3 videos fijados: credibilidad, conexión y cercanía'},
     {t:'Historias destacadas ordenadas', s:'Son los círculos debajo de tu bio. Sugerencia: Música · Proceso · Live · Personal.'},
     {t:'Spotify for Artists activado, con foto, bio y Artist Pick', s:'Es una app gratis. Artist Pick = el tema que Spotify muestra arriba en tu perfil: ponele el más nuevo.'}
   ],
-  deep:`<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div><h4>✗ No necesitás</h4><p>Cámara cara. Un lugar perfecto. Subtítulos genéricos. Efectos de moda.</p></div><div><h4>✓ Mínimos fijos</h4><p>Misma letra. Mismos colores. Mismo tipo de planos. Una energía reconocible al hablar.</p></div></div><h4>Antes de subir algo, 3 preguntas</h4><ul><li>¿Lo primero que se ve tiene que ver con mis 3 palabras?</li><li>¿Es simple y claro? (sacá todo lo que distrae)</li><li>¿Parece del mismo mundo que el resto de mi contenido?</li></ul><h4>Por qué importa</h4><p>La estética te retiene los primeros segundos; la historia te retiene el resto. Un celular bien usado gana a una cámara mal aprovechada: lo que atrae es orden, limpieza e intención.</p><h4>Spotify</h4><ul><li><b>Foto de artista:</b> que vaya con tu estética. Cambiala con cada etapa de tu proyecto.</li><li><b>Playlists propias:</b> armá una con tus influencias. Spotify aprende con quién te relacionás y te recomienda a oyentes parecidos.</li></ul><h4>¿Cuenta nueva o la que ya tengo?</h4><p>Si recién empezás, quedate con la que tenés. Cuando tengas más seguidores, si la mayoría no son tu oyente (amigos, familia, otra etapa), ahí puede convenir una cuenta nueva: Instagram muestra tus videos primero a quienes ya te siguen, y si no reaccionan, te baja el alcance. Lo hablamos juntos.</p>`
+  deep:`<h4>Para qué sirve tu perfil</h4><p>Con cada video va a llegar gente nueva a tu Instagram. <b>Tu perfil es el que la convierte en seguidora y fan.</b> Por eso primero se optimiza el perfil y después se sale a buscar gente.</p><h4>La bio en 3 partes</h4><ul><li><b>Qué sos:</b> en una oración cortita, qué hacés y qué cantás.</li><li><b>Para quién:</b> una frase que le hable al oyente y a su situación.</li><li><b>Llamada a la acción:</b> "ya podés escuchar mi tema". La gente lo lee y entiende que hay algo para escuchar.</li></ul><h4>Los 3 videos fijados</h4><ul><li><b>Credibilidad:</b> que se vea que lo de tu bio es real (un show, el videoclip).</li><li><b>Conexión:</b> que hable del oyente ("pasé por esto y escribí esta canción").</li><li><b>Cercanía:</b> que te sientan persona (detrás de escena, vos hablando).</li></ul><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px"><div><h4>✗ No necesitás</h4><p>Cámara cara. Un lugar perfecto. Subtítulos genéricos. Efectos de moda.</p></div><div><h4>✓ Mínimos fijos</h4><p>Misma letra. Mismos colores. Mismo tipo de planos. Una energía reconocible al hablar.</p></div></div><h4>¿Cuenta nueva o la que ya tengo?</h4><p>Si recién empezás, quedate con la que tenés. Cuando tengas más seguidores, si la mayoría no son tu oyente (amigos, familia, otra etapa), ahí puede convenir una cuenta nueva: Instagram muestra tus videos primero a quienes ya te siguen, y si no reaccionan, te baja el alcance. Lo hablamos juntos.</p>`
 },
 {
-  id:'cap5', t:'Tu contenido', min:10,
-  guide:{"anim":"jump","prop":"mic","lines":["Qué publicar. La gente no sigue publicidad: sigue personas.","Todo entra en 3 tipos: proceso, opinión y lo que sabés. Con 1 idea de cada uno ya arrancás.","Y mirá el embudo de colores: cada video le habla a un tipo de persona distinta."]},
-  why:'El error más común es publicar solo cuando sale un tema. <b>La gente no sigue publicidad, sigue personas.</b> Todo tu contenido entra en 3 tipos. Escribí 1 idea de cada uno (2 si te salen) y ya tenés para arrancar.',
+  id:'cap5', t:'Tu contenido', min:12,
+  guide:{"anim":"jump","prop":"mic","lines":["Qué publicar. El error más común es **publicar solo cuando sale un tema.**","!La gente no sigue publicidad: sigue personas.","!Todo tu contenido entra en 3 tipos: proceso, opinión y lo que sabés.","**Con 1 idea de cada uno ya arrancás.** Después armamos **tu primer reel** y te muestro **a quién le habla cada video.**"]},
+  why:'La gente no sigue publicidad, sigue personas.',
   visual:'pillars',
   fields:[
-    {id:'c_doc1', kind:'area', group:'🎥 Proceso', label:'¿Qué estás creando ahora que podrías mostrar sin terminar?', ex:'30 segundos del momento en que encuentro el estribillo de mi tema nuevo', short:true},
+    {id:'c_doc1', kind:'area', group:'🎥 Proceso', label:'¿Qué estás creando ahora que podrías mostrar sin terminar?', hint:'**Lo que pasa mientras creás** no lo puede copiar nadie.', ex:'30 segundos del momento en que encuentro el estribillo de mi tema nuevo', short:true},
     {id:'c_doc2', kind:'area', group:'🎥 Proceso', opt:true, label:'¿Qué error te pasó hace poco que le serviría a otro artista?', ex:'Grabé toda la voz con el micro mal puesto y tuve que repetir', short:true},
-    {id:'c_op1', kind:'area', group:'💬 Opinión', label:'¿Qué idea de la industria musical querés desmentir?', hint:'Podés usar tu opinión del Paso 2.', ex:'"Necesitás una discográfica para que te escuchen"', short:true},
-    {id:'c_con1', kind:'area', group:'🧠 Lo que sabés', label:'¿Qué aprendiste haciendo música que podrías enseñar en 30 segundos?', hint:'No hace falta ser experto: alcanza con algo que vos sabés y alguien que empieza no.', ex:'Cómo grabo voces en mi cuarto con una manta y un micro barato', short:true},
+    {id:'c_op1', kind:'area', group:'💬 Opinión', label:'¿Qué idea de la industria musical querés desmentir?', hint:'**Podés usar tu opinión del Paso 2.**', ex:'"Necesitás una discográfica para que te escuchen"', short:true},
+    {id:'c_con1', kind:'area', group:'🧠 Lo que sabés', label:'¿Qué aprendiste haciendo música que podrías enseñar en 30 segundos?', hint:'**No hace falta ser experto:** alcanza con algo que vos sabés y alguien que empieza no.', ex:'Cómo grabo voces en mi cuarto con una manta y un micro barato', short:true},
     {id:'c_con2', kind:'area', group:'🧠 Lo que sabés', opt:true, label:'Otra cosa que sabés hacer (de música o no)', ex:'Cómo armé el estribillo de "Valencia" en 20 minutos', short:true},
-    {id:'c_formatos', kind:'chips', multi:true, max:3, label:'Elegí 3 formatos para grabar esas ideas', hint:'Empezá por los que te salen más fácil. Si te da vergüenza la cámara, probá voz en off o carrusel.',
+    {id:'c_parte', kind:'area', group:'🎬 Tu primer reel', label:'¿Qué parte de tu canción (15 a 20 segundos) resume mejor su clima?', hint:'Es **la parte que va a sonar en tus reels.** Elegí la que, si alguien escucha solo eso, entiende de qué va el tema.', ex:'El estribillo: "y en Valencia nadie sabe mi nombre…"', short:true},
+    {id:'c_gancho', kind:'area', group:'🎬 Tu primer reel', label:'Escribí un gancho: la primera frase en pantalla de tu reel', hint:'Lo primero que se ve tiene que **generar identificación o intriga** para que se queden.', ex:'"Si te mudaste solo y nadie te escribe, esta es para vos"', short:true},
+    {id:'c_formatos', kind:'chips', multi:true, max:3, label:'Elegí 3 formatos para grabar esas ideas', hint:'**Empezá por los que te salen más fácil.** Si te da vergüenza la cámara, probá voz en off o carrusel.',
      ex:'Selfie a cámara, Versión acústica, Historia de la letra',
-     chips:['🎤 Cantando en un lugar real','🎸 Versión acústica','🎛️ Mostrando la pantalla de tu programa de música','📖 Historia de la letra','🎬 Tu voz + imágenes (sin mostrar la cara)','🤳 Hablando a cámara','🖼️ Carrusel de fotos del día']}
+     chips:['🎤 Cantando en la calle (con la gente reaccionando)','🎸 Versión acústica','🎛️ Mostrando la pantalla de tu programa de música','📖 Historia de la letra','🎬 Tu voz + imágenes (sin mostrar la cara)','🤳 Hablando a cámara','🖼️ Carrusel de fotos del día']}
   ],
   done:[
     'Tengo al menos 1 idea de cada tipo',
+    'Tengo mi parte de 15–20 s y un gancho',
     'Elegí mis 3 formatos',
     'Voy a publicar también cuando no estoy lanzando',
-    'Cada video lo subo a Instagram, TikTok y YouTube Shorts'
+    'Cada video lo subo a Instagram, TikTok, YouTube Shorts y Facebook'
   ],
-  deep:`<h4>Para qué sirve cada red</h4><table class="tbl"><tr><td>🎵 Spotify</td><td>Tu número de verdad: gente que guarda tus temas.</td></tr><tr><td>📱 Instagram</td><td>Tu casa. Reels para que te encuentren, historias para conectar.</td></tr><tr><td>🎬 TikTok</td><td>Descubrimiento. Lo crudo funciona mejor. No lo abandones si los primeros no explotan.</td></tr><tr><td>▶️ YouTube</td><td>Shorts para alcance; videos largos para los que ya te conocen.</td></tr></table><h4>Si recién empezás</h4><p>1° Instagram + Spotify for Artists → 2° TikTok (reusando videos) → 3° YouTube Shorts y después videos largos.</p><h4>Antes de un lanzamiento</h4><p>4 semanas antes: "estoy terminando algo que me costó…" · 3 semanas: 10 seg del proceso sin revelar · 2 semanas: la historia de lo que vivías · 1 semana: anunciás la fecha. El plan día por día está en la Guía de Lanzamiento.</p><h4>¿Más formatos?</h4><p>En el <a href="${ARSENAL_URL}" target="_blank" rel="noopener">Arsenal Creativo</a> (otra guía mía) tenés muchos más, con ejemplos.</p>`
+  deep:`<h4>Por qué en las 4 redes</h4><p>Un video que no pega en Instagram puede pegar en Facebook o en TikTok. Y aunque le vaya "mal": <b>300 vistas en cada una son 1.200 personas</b>, cuatro veces más que si lo dejabas solo en Instagram.</p><h4>Los primeros 1 o 2 meses</h4><p>Lo normal es que al principio le vaya flojo a tu contenido: <b>el algoritmo todavía no sabe quién sos ni a quién le cantás.</b> Primero se lo muestra a tus seguidores y después a gente nueva. Con 2 o 3 reels por semana, en 1 o 2 meses empieza a entenderte y ahí aparecen los videos que explotan. <b>No aflojes en esa etapa.</b></p><h4>Después</h4><p>Cuando algo funcione, <b>duplicá la apuesta</b> con más de ese contenido. Cuando lleguen oyentes, volvé a este manual y ajustá tu oyente con lo que aprendiste.</p><h4>El plan día por día</h4><p>Está en el <a href="${GUIA_URL}" target="_blank" rel="noopener">Plan de Lanzamiento</a>. Y muchas más ideas de formatos en el <a href="${ARSENAL_URL}" target="_blank" rel="noopener">Arsenal Creativo</a>.</p>`
 },
 {
   id:'cap6', t:'Tu norte', min:8,
-  guide:{"anim":"rise","prop":"star","look":"up","lines":["Última parada: tu norte.","Tres preguntas sin respuesta correcta. Escribí como si nadie lo fuera a leer."]},
-  why:'Tres preguntas sin respuesta correcta. <b>Si las contestás con honestidad, todo lo demás tiene sentido.</b> Escribí como si nadie lo fuera a leer.',
+  guide:{"anim":"rise","prop":"star","look":"up","lines":["Última parada: **tu norte.**","!Tres preguntas sin respuesta correcta.","**Escribí como si nadie lo fuera a leer.** Si las contestás con honestidad, todo lo demás tiene sentido."]},
+  why:'Tres preguntas sin respuesta correcta.',
   fields:[
-    {id:'n_porque', kind:'area', label:'¿Por qué hacés música?', hint:'La respuesta real, no la que quedaría bien en una entrevista.',
+    {id:'n_porque', kind:'area', label:'¿Por qué hacés música?', hint:'**La respuesta real,** no la que quedaría bien en una entrevista.',
      ex:'Porque es la única forma en que digo las cosas que no me animo a decir en persona', tall:true},
-    {id:'n_sentir', kind:'area', label:'¿Qué querés que sienta alguien la primera vez que te escucha?', hint:'Si ya lo pensaste en el Paso 3, resumilo en una frase. No vale "que le guste".',
+    {id:'n_sentir', kind:'area', label:'¿Qué querés que sienta alguien la primera vez que te escucha?', hint:'Si ya lo pensaste en el Paso 3, resumilo en una frase. **No vale "que le guste".**',
      ex:'Que está sola en su cuarto a las 3 AM pero no se siente sola'},
-    {id:'n_5', kind:'area', label:'¿Qué artista querés ser en 5 años?', hint:'No "tener un hit". ¿Qué comunidad tenés? ¿En qué escenarios estás? ¿Qué le cambia tu música a quien la escucha?',
+    {id:'n_5', kind:'area', label:'¿Qué artista querés ser en 5 años?', hint:'No "tener un hit". **¿Qué comunidad tenés? ¿En qué escenarios estás? ¿Qué le cambia tu música a quien la escucha?**',
      ex:'Llenar salas de 500 personas y que me escriban que mis canciones las acompañaron', tall:true}
   ],
   done:null,
@@ -819,14 +863,14 @@ const STEPS = [
 
 /* Lo que dice Larry en la portada y en la tarjeta final */
 const GUIDE_COVER = { anim:'rise', prop:'note', lines:[
-  '¡Hola! Soy Larry 👋 Te voy a acompañar en este recorrido.',
-  'Vamos a armar tu marca en 6 paradas: dónde estás, tu sonido, tu oyente, tu imagen, tu contenido y tu norte.',
-  'Te voy a hacer preguntas cortas por acá y vos me contestás abajo. En cada una vas a ver qué contestó Luna, una artista de ejemplo. Es para darte una idea, no para copiarla.',
-  'Si te equivocás, tocá tu respuesta y la cambiás. Se guarda solo, así que podés hacer una parada por día (usá siempre el mismo celu o compu).',
-  'Al final te queda tu tarjeta de marca y me la mandás. ¿Arrancamos?'] };
+  '¡Hola! Soy **Larry** 👋 Te voy a acompañar en este recorrido.',
+  'Vamos a armar **tu marca en 6 paradas:** dónde estás, tu sonido, tu oyente, tu imagen, tu contenido y tu norte.',
+  'Te voy a hacer **preguntas cortas** por acá y vos me contestás abajo. En cada una vas a ver **qué contestó Luna,** una artista de ejemplo. Es para darte una idea, no para copiarla.',
+  '**¿No sabés qué poner?** Tocá "Todavía no lo sé" y seguimos. **Si te equivocás,** tocá tu respuesta y la cambiás. Se guarda solo (usá siempre el mismo celu o compu).',
+  'Al final **subimos todo a tu carpeta** y te queda **tu tarjeta de marca.** ¿Arrancamos?'] };
 const GUIDE_FINAL = { anim:'jump', prop:'star', lines:[
-  '¡Lo lograste! Esta es tu tarjeta de marca.',
-  'Guardala en PDF y mandámela: te devuelvo tu perfil de artista y un texto para que la IA te dé ideas con tu estilo.'] };
+  '!¡Lo lograste! Esta es tu tarjeta de marca.',
+  '**Con esto armamos tu estrategia de lanzamiento.** Si querés cambiar algo, tocá tu respuesta y se actualiza.'] };
 
 /* ════════════════════════════════════════════════════════════════════
    ESTADO (se guarda solo en el navegador)
@@ -845,7 +889,9 @@ function save(){
 }
 function toast(t){ const el=$('#toast'); el.textContent=t; el.classList.add('on'); setTimeout(()=>el.classList.remove('on'),1700); }
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
-function val(id){ const v=S[id]; if(Array.isArray(v)) return v.filter(Boolean).join(', '); return (v||'').toString().trim(); }
+function val(id){ const v=S[id]; if(Array.isArray(v)) return v.filter(x=>x && x!=='Todavía no lo sé').join(', '); const t=(v||'').toString().trim(); return t==='Todavía no lo sé' ? '' : t; }
+function raw(id){ const v=S[id]; if(Array.isArray(v)) return v.filter(Boolean).join(', '); return (v||'').toString().trim(); }
+function arr(id){ return (S[id]||[]).filter(x=>x && x!=='Todavía no lo sé'); }
 function filled(f){
   const v = S[f.id];
   if(f.kind==='yesno') return v && Object.keys(v).length >= f.items.length;
@@ -868,8 +914,8 @@ function posicionamiento(html){
   return `Hago ${g?H(g):(html?ph('tu género'):'[tu género]')}. Mi música es para gente que escucha ${r?H(r):(html?ph('tus referencias'):'[tus referencias]')}, pero busca ${d?H(lc(d)):(html?ph('lo que tenés vos'):'[lo que tenés vos]')}.`;
 }
 function bio(){
-  const g = val('s_genero'), c = val('p_ciudad'), f = val('p_frase');
-  return `Artista de ${g? lc(g) : '[género]'} desde ${c||'[ciudad]'}.\n${f||'[tu frase]'}`;
+  const g = val('s_genero'), c = val('p_ciudad'), f = val('p_frase'), a = val('p_cta');
+  return 'Artista de '+(g? lc(g) : '[género]')+' desde '+(c||'[ciudad]')+'.\n'+(f||'[tu frase para tu oyente]')+'\n'+(a||'[tu llamada a la acción]');
 }
 const IDEAS = {
   'De noche sin poder dormir':'Un video que parezca las 2 AM en tu cuarto, poca luz, contando qué sentías cuando escribiste la canción.',
@@ -889,25 +935,51 @@ function spotifyDraft(){
 /* ════════════════════════════════════════════════════════════════════
    VISUALES (tarjetas que aparecen en el chat)
    ════════════════════════════════════════════════════════════════════ */
+const FONTS = ['Bebas Neue','Anton','Oswald','Archivo Black','Montserrat','Poppins','Inter','Roboto','Lato','Raleway','Josefin Sans','Space Grotesk','Syne','DM Serif Display','Playfair Display','Cormorant Garamond','Libre Baskerville','Abril Fatface','Lobster','Pacifico','Dancing Script','Caveat','Shadows Into Light','Homemade Apple','Permanent Marker','Rock Salt','Special Elite','Courier Prime','IBM Plex Mono','Space Mono','VT323','Press Start 2P','Silkscreen','Monoton','Bungee','Righteous','Fredoka','Baloo 2','Comfortaa','Quicksand','Unbounded','Rubik Mono One','Black Ops One','Bangers','Creepster','UnifrakturMaguntia','Cinzel','Major Mono Display','Rubik Glitch','Nosifer','Audiowide','Orbitron','Teko','Barlow Condensed','Kanit','Sora','Manrope','Outfit','Lexend','Tilt Warp','Gloria Hallelujah','Indie Flower','Satisfy','Great Vibes','Marck Script','Yellowtail','Sedgwick Ave','Knewave','Zilla Slab','Bitter','Arvo'];
+const FLOADED = {};
+function loadFont(n){ if(!n || FLOADED[n]) return; FLOADED[n] = 1; const l = document.createElement('link'); l.rel = 'stylesheet';
+  l.href = 'https://fonts.googleapis.com/css2?family='+encodeURIComponent(n).replace(/%20/g,'+')+'&display=swap'; document.head.appendChild(l); }
+function fontStyle(v){ if(v && FONTMAP[v]) return FONTMAP[v];
+  if(v && v.indexOf('font:')===0){ const n = v.slice(5); loadFont(n); return "font-family:'"+n.replace(/'/g,'')+"';font-size:15px"; }
+  return FONTMAP['Gruesa y en MAYÚSCULAS']; }
+function fontLabel(v){ return v && v.indexOf('font:')===0 ? v.slice(5) : v; }
+function fontListHTML(q){
+  q = (q||'').trim().toLowerCase(); const cur = S.v_tipo;
+  const list = FONTS.filter(n=>!q || n.toLowerCase().includes(q)).slice(0, 14);
+  list.forEach(loadFont);
+  const name = val('p_nombre') || 'Tu nombre';
+  let h = list.map(n=>'<button type="button" class="fbtn'+(cur==='font:'+n?' sel':'')+'" data-font="'+esc(n)+'" style="font-family:\''+n+'\'">'+esc(name)+'<small>'+esc(n)+'</small></button>').join('');
+  const typed = (document.querySelector('[data-fsearch]')||{}).value || '';
+  if(q && !FONTS.some(n=>n.toLowerCase()===q)){ loadFont(typed.trim()); h += '<button type="button" class="fbtn use'+(cur==='font:'+typed.trim()?' sel':'')+'" data-font="'+esc(typed.trim())+'" style="font-family:\''+esc(typed.trim())+'\'">'+esc(name)+'<small>Usar «'+esc(typed.trim())+'» de Google Fonts</small></button>'; }
+  return h || '<p class="note">No la encontré en la lista. Escribí el nombre exacto como aparece en fonts.google.com.</p>';
+}
+function fontPickerHTML(){ return '<div class="fpick"><input type="text" data-fsearch placeholder="🔎 Buscá una tipografía (ej: Bebas Neue, Lobster)"><div class="flist" data-flist>'+fontListHTML('')+'</div></div>'; }
 const FONTMAP = {
+  'Clásica con serifa':"font-family:'Playfair Display';font-weight:700;font-size:14px",
+  'Graffiti':"font-family:'Permanent Marker';font-size:15px",
+  'Redondeada':"font-family:'Baloo 2';font-weight:700;font-size:15px",
+  'Retro 8 bits':"font-family:'Press Start 2P';font-size:9px;line-height:1.5",
   'Gruesa y en MAYÚSCULAS':"font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase;font-size:15px;letter-spacing:.02em",
   'Fina y elegante':"font-family:'Barlow';font-weight:400;font-size:13px;letter-spacing:.06em",
   'Escrita a mano':"font-family:'Caveat';font-size:18px",
   'Máquina de escribir':"font-family:'Special Elite';font-size:12.5px"
 };
 function visual(kind){
-  if(kind==='ladder') return `
-    <div class="visual"><div class="mono vis-title">Achicá el círculo hasta quedar casi solo</div>
-    <div class="ladder">
-      <div style="width:100%"><b>Mercado</b>Música urbana<i>millones de artistas</i></div>
-      <div style="width:84%"><b>Nicho</b>Trap melódico en español<i>miles</i></div>
-      <div style="width:68%"><b>Sub-nicho</b>Trap melódico con letras de desamor<i>cientos</i></div>
-      <div class="l4" style="width:52%"><b>Micro-nicho ← tu lugar</b>Trap lo-fi de desamor, desde tu barrio<i>muy pocos</i></div>
-    </div></div>`;
+  if(kind==='ladder'){
+    const L = [
+      {k:'Mercado', t:'Música urbana', n:'millones de artistas', pp:24, w:100, c:'#4a4a58'},
+      {k:'Nicho', t:'Trap melódico en español', n:'miles', pp:12, w:84, c:'#2a79d3'},
+      {k:'Sub-nicho', t:'Trap melódico con letras de desamor', n:'cientos', pp:5, w:70, c:'#7b5cff'},
+      {k:'Micro-nicho ★ tu lugar', t:'Trap lo-fi de desamor, desde tu barrio', n:'casi nadie: acá te eligen a vos', pp:1, w:58, c:'#7fff5f', me:1}
+    ];
+    return '<div class="visual"><div class="mono vis-title">Achicá el círculo hasta quedar casi solo</div><div class="ladder2">'
+      + L.map((l,i)=>'<div class="lv'+(l.me?' me':'')+'" style="width:'+l.w+'%;background:'+l.c+'"><div class="tx"><b>'+(i+1)+' · '+l.k.toUpperCase()+'</b>'+l.t+'<i>'+l.n+'</i></div><span class="pp">'+'<i></i>'.repeat(l.pp)+'</span></div>').join('')
+      + '<div class="arrow">■ = artistas compitiendo por la misma gente<br>▼ MÁS CONCRETO = MENOS COMPETENCIA ▼</div></div></div>';
+  }
   if(kind==='persona'){
     const nm = val('o_nombre'); const ini = (nm||'?').trim().charAt(0).toUpperCase();
-    const tags = [...(S.o_momento||[]), ...(S.o_siente||[])];
-    const first = (S.o_momento||[])[0];
+    const tags = [...arr('o_momento'), ...arr('o_siente')];
+    const first = arr('o_momento')[0];
     return `<div class="visual"><div class="mono vis-title">Tu oyente</div>
       <div class="persona"><div class="avatar">${esc(ini)}</div><div style="min-width:0">
         <h4>${nm?esc(nm):'<span style="color:var(--dim)">Nombre, edad, ciudad</span>'}</h4>
@@ -920,14 +992,14 @@ function visual(kind){
   }
   if(kind==='feed'){
     const [bg,tx,ac,rp] = S.v_colores;
-    const fs = FONTMAP[S.v_tipo] || FONTMAP['Gruesa y en MAYÚSCULAS'];
+    const fs = fontStyle(S.v_tipo);
     const name = val('p_nombre') || 'Tu nombre';
     const handle = (val('p_nombre')||'tunombre').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9._]/g,'');
     const bioTxt = bio();
-    const reels = (val('p_reels')||'').split(/\s*(?:\d\)|\n)\s*/).map(s=>s.trim()).filter(Boolean).slice(0,3);
-    const linkTxt = S.p_link==='Pre-save del próximo tema' ? 'presave.link/'+handle : S.p_link==='Linktree' ? 'linktr.ee/'+handle : S.p_link==='Mi perfil de Spotify' ? 'open.spotify.com/artist/'+handle : '';
+    const reels = [val('p_fij1'), val('p_fij2'), val('p_fij3')].some(Boolean) ? [val('p_fij1')||'credibilidad', val('p_fij2')||'conexión', val('p_fij3')||'cercanía'] : (val('p_reels')||'').split(/\s*(?:\d\)|\n)\s*/).map(s=>s.trim()).filter(Boolean).slice(0,3);
+    const linkTxt = S.p_link==='Pre-save del próximo tema' ? 'presave.link/'+handle : (S.p_link==='Linktwin con mi tema' || S.p_link==='Linktree') ? 'linktw.in/'+handle : S.p_link==='Mi perfil de Spotify' ? 'open.spotify.com/artist/'+handle : '';
     const PIN = '<svg viewBox="0 0 24 24" class="ico"><path d="M15 3l6 6-3 1-4 4 1 4-2 2-4-4-5 5-1-1 5-5-4-4 2-2 4 1 4-4z" fill="#fff"/></svg>';
-    const mood = (S.v_mood||[])[0] || '3 AM en el cuarto';
+    const mood = arr('v_mood')[0] || '3 AM en el cuarto';
     const verso = val('n_sentir') || val('p_frase') || 'canciones para cuando no podés dormir';
     const ICON = {
       reel:'<svg viewBox="0 0 24 24" class="ico"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="#fff" stroke-width="2"/><path d="M2.5 8h19M9 2.5l3 5.5M15 2.5l3 5.5" stroke="#fff" stroke-width="2" fill="none"/><path d="M10 11.5v6l5-3z" fill="#fff"/></svg>',
@@ -946,7 +1018,7 @@ function visual(kind){
       text(rp, tx, '<span class="sub" style="color:'+tx+'">pre-save ↗</span><span class="big" style="'+fs+'">link en bio</span>'),
       photo('tlm103', ac, bg, 'carr')
     ];
-    const vals = (S.v_valores||[]);
+    const vals = arr('v_valores');
     return '<div class="visual feedwrap">'
      + '<div class="phone">'
      +   '<div class="ph-status"><b>9:41</b><span>▂▄▆ ᯤ ▭</span></div>'
@@ -959,7 +1031,7 @@ function visual(kind){
      +   '<div class="ph-tabs"><span class="on"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM9 3v18M15 3v18M3 9h18M3 15h18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 9v6l5-3z" fill="currentColor"/></svg></span><span><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 19c1-3 3-4 5.5-4s4.5 1 5.5 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span></div>'
      +   '<div class="ph-grid">'+tiles.join('')+'</div>'
      + '</div>'
-     + '<div class="vibe">'+(S.v_mood||[]).map(m=>'<span>🎬 '+esc(m)+'</span>').join('')+vals.map(v=>'<span>◆ '+esc(v)+'</span>').join('')+'</div>'
+     + '<div class="vibe">'+arr('v_mood').map(m=>'<span>🎬 '+esc(m)+'</span>').join('')+vals.map(v=>'<span>◆ '+esc(v)+'</span>').join('')+'</div>'
      + '<p class="note">📌 = videos fijados · Fotos de ejemplo teñidas con tus colores (Wikimedia Commons)</p>'
      + '</div>';
   }
@@ -973,21 +1045,30 @@ function visual(kind){
       <div class="week">
         <div class="r"><b>LUN</b>Reel<br>🎥</div><div class="h"><b>MAR</b>Historia</div><div class="r"><b>MIÉ</b>Reel<br>💬</div><div class="h"><b>JUE</b>Historia</div><div class="r"><b>VIE</b>Reel<br>🧠</div><div><b>SÁB</b>libre</div><div><b>DOM</b>libre</div>
       </div>
-      <p class="note">Cada reel lo subís igual a <b>Instagram + TikTok + YouTube Shorts</b>. Un video que no funciona en una puede explotar en otra.</p>
+      <p class="note">Cada reel lo subís igual a <b>Instagram + TikTok + YouTube Shorts + Facebook</b>. Un video que no funciona en una puede explotar en otra.</p>
     </div>`;
+  if(kind==='reel'){
+    const parte = val('c_parte'), gancho = val('c_gancho');
+    return '<div class="visual"><div class="mono vis-title">Cómo se arma cada reel</div><div class="reelsteps">'
+      + '<div><span class="n">1</span><p><b>La parte de tu canción.</b> Los 15–20 segundos que resumen el clima del tema.'+(parte?'<em>'+esc(parte)+'</em>':'')+'</p></div>'
+      + '<div><span class="n">2</span><p><b>El gancho.</b> Un texto o vos hablando al principio, que genere identificación o intriga.'+(gancho?'<em>'+esc(gancho)+'</em>':'')+'</p></div>'
+      + '<div><span class="n">3</span><p><b>Tu canción mientras hacés algo.</b> Un gancho visual: playback haciendo una acción, o cantando en la calle con la gente reaccionando. <b>Siempre con subtítulos:</b> mucha gente mira sin sonido.</p></div>'
+      + '<div><span class="n">4</span><p><b>La llamada a la acción.</b> "Escuchá el tema", "seguime", "comentame qué te pareció". Que la gente interactúe y la red entienda que gustó.</p></div>'
+      + '</div></div>';
+  }
   if(kind==='funnel') return `<div class="visual"><div class="mono vis-title">El embudo · a quién le habla cada video</div>
       <div class="funnel">
-        <div class="f-row"><div class="f-bar" style="width:100%;background:#7fff5f">1 · No te conoce <b>100%</b></div><p><b style="color:#7fff5f">Que te encuentren.</b> Reels y TikToks de proceso para gente nueva. Objetivo: que frenen.</p></div>
-        <div class="f-row"><div class="f-bar" style="width:72%;background:#ffaa33">2 · Te vio alguna vez <b>50%</b></div><p><b style="color:#ffaa33">Que se queden.</b> Tu historia, detrás de escena, historias diarias. Acá nace la confianza.</p></div>
-        <div class="f-row"><div class="f-bar" style="width:48%;background:#ff4d6d;color:#fff">3 · Te sigue <b>25%</b></div><p><b style="color:#ff4d6d">Que escuchen.</b> Opinión y lo que sabés; link en bio, pre-save, anuncio del tema.</p></div>
-        <div class="f-row"><div class="f-bar" style="width:28%;background:#fff">4 · Te escucha <b>10%</b></div><p><b style="color:#fff">Que vuelvan.</b> Agradecer, backstage, adelantar lo próximo. Ya es tu comunidad.</p></div>
+        <div class="f-row"><div class="f-bar" style="width:100%;background:#7fff5f">1 · No te conoce <b>100%</b></div><p><b style="color:#7fff5f">Que te encuentren.</b> Videos para hacerte viral: probá ganchos que generen intriga. Ej: cantando en la calle con la gente reaccionando.</p></div>
+        <div class="f-row"><div class="f-bar" style="width:72%;background:#ffaa33">2 · Te vio alguna vez <b>50%</b></div><p><b style="color:#ffaa33">Que se queden.</b> Te vuelve a aparecer y tiene que encontrar un porqué: videos de conexión ("pasé por esto y escribí esta canción").</p></div>
+        <div class="f-row"><div class="f-bar" style="width:48%;background:#ff4d6d;color:#fff">3 · Te sigue <b>25%</b></div><p><b style="color:#ff4d6d">Que escuchen.</b> "Ya está disponible, andá a escucharlo". Parece spam, pero si hiciste lo anterior, funciona.</p></div>
+        <div class="f-row"><div class="f-bar" style="width:28%;background:#fff">4 · Te escucha <b>10%</b></div><p><b style="color:#fff">Que vuelvan.</b> Historias, cercanía, cajita de preguntas y recordarle el link. Ya es tu comunidad.</p></div>
         <p class="f-note">Cuanto más abajo, menos gente pero más interés. El error común: hablarle solo a los que ya te siguen cuando la mayoría todavía no te conoce. Más ideas por color en el <a href="${ARSENAL_URL}" target="_blank" rel="noopener">Arsenal Creativo</a>.</p>
       </div></div>`;
   return '';
 }
 function bcardHTML(){
   const [bg,tx,ac] = S.v_colores;
-  const fs = FONTMAP[S.v_tipo] || '';
+  const fs = fontStyle(S.v_tipo);
   const name = val('p_nombre') || 'Tu nombre';
   const box = (t,c)=>`<div><span class="mono">${t}</span><p>${c||'<span style="opacity:.45">— sin completar —</span>'}</p></div>`;
   const ideas = ['c_doc1','c_op1','c_con1'].map(id=>val(id)).filter(Boolean).map(esc).join('<br>');
@@ -1013,6 +1094,7 @@ function liveHTML(k){
   if(k==='pos') return '<div class="output"><span class="mono">Tu frase de posicionamiento</span><p>'+posicionamiento(true)+'</p></div>';
   if(k==='bio') return '<div class="output"><span class="mono">Tu bio lista para copiar</span><p style="white-space:pre-line;font-size:17px">'+esc(bio())+'</p><button class="copy" data-copy="bio">Copiar bio</button></div>';
   if(k==='bcard') return bcardHTML();
+  if(k==='reel') return visual('reel');
   return '';
 }
 function refreshLive(){ document.querySelectorAll('[data-live]').forEach(el=>{ el.innerHTML = liveHTML(el.dataset.live); }); }
@@ -1023,18 +1105,20 @@ function refreshLive(){ document.querySelectorAll('[data-live]').forEach(el=>{ e
    go = botón para seguir · send = envío final
    ════════════════════════════════════════════════════════════════════ */
 const AFTER = {
-  p_nombre: [{k:'say', fn:()=>'¡Un gusto, '+(val('p_nombre')||'artista')+'! 🤝 Primero, una foto rápida de dónde estás hoy.'}],
-  d_traps: [{k:'say', html:()=>{ const f=fieldOf('d_traps'); const sel=S.d_traps||[];
-    if(!sel.length) return '<p class="vt">¡Bien ahí! No caés en ninguna. Seguimos.</p>';
-    return '<p class="vt">Tranqui, nos pasa a casi todos. Así salís:</p>'+f.items.filter(t=>sel.includes(t.t)).map(t=>'<p class="fixl">'+t.e+' <b>'+esc(t.t)+'</b> '+esc(t.fix)+'</p>').join(''); }}],
-  s_persp: [{k:'say', t:'Con todo eso te armé tu frase de posicionamiento. Si cambiás algo, se actualiza sola:'},{k:'card', card:'pos'}],
-  o_momento: [{k:'say', fn:()=>{ const m=(S.o_momento||[])[0]; return m&&IDEAS[m] ? '💡 Idea de reel: '+IDEAS[m] : 'Anotado 👌'; }}],
-  o_siente: [{k:'say', t:'Esta es tu oyente. A ella le hablás en cada video:'},{k:'card', card:'persona'}],
-  v_colores: [{k:'say', t:'Mirá, así se vería tu Instagram con esos colores 👇 Lo que elijas de acá en adelante lo va cambiando.'},{k:'card', card:'feed'}],
-  p_frase: [{k:'say', t:'Con tu ciudad y tu frase ya tenés bio. Copiala tal cual:'},{k:'card', card:'bio'}],
-  p_reels: [{k:'say', t:'Así queda tu perfil completo, con tus 3 videos fijados arriba 📌'},{k:'card', card:'feed'}],
-  c_formatos: [{k:'say', t:'Y esto es clave: cada video le habla a un tipo de persona distinta. Mirá el embudo por colores:'},{k:'card', card:'funnel'}],
-  n_5: [{k:'say', t:'Gracias por la honestidad. Eso es tu norte: volvé a leerlo cuando dudes.'}]
+  p_nombre: [{k:'say', fn:()=>'¡Un gusto, **'+(val('p_nombre')||'artista')+'**! 🤝 Primero, **una foto rápida de dónde estás hoy.**'}],
+  d_traps: [{k:'say', html:()=>{ const f=fieldOf('d_traps'); const sel=(S.d_traps||[]).filter(x=>x!==NS);
+    if(!sel.length) return '<p class="vt">¡Bien ahí! <b>Seguimos.</b></p>';
+    return '<p class="vt">Tranqui, <b>nos pasa a casi todos.</b> Así salís:</p>'+f.items.filter(t=>sel.includes(t.t)).map(t=>'<p class="fixl">'+t.e+' <b>'+esc(t.t)+'</b> '+esc(t.fix)+'</p>').join(''); }}],
+  s_persp: [{k:'say', t:'Con todo eso te armé **tu frase de posicionamiento.** Si cambiás algo, se actualiza sola:'},{k:'card', card:'pos'}],
+  o_momento: [{k:'say', fn:()=>{ const m=arr('o_momento')[0]; return m&&IDEAS[m] ? '💡 **Idea de reel:** '+IDEAS[m] : 'Anotado 👌'; }}],
+  o_siente: [{k:'say', t:'!Esta es tu oyente: a ella le hablás en cada video.'},{k:'card', card:'persona'}],
+  v_colores: [{k:'say', t:'Mirá, **así se vería tu Instagram** con esos colores 👇 Lo que elijas de acá en adelante **lo va cambiando.**'},{k:'card', card:'feed'}],
+  p_cta: [{k:'say', t:'¡Listo! **Tu bio en 3 partes:** qué sos, para quién cantás y la llamada a la acción. **Copiala tal cual:**'},{k:'card', card:'bio'}],
+  p_fij3: [{k:'say', t:'Así queda **tu perfil completo,** con tus **3 videos fijados** arriba 📌'},{k:'card', card:'feed'}],
+  c_gancho: [{k:'say', t:'Con eso ya tenés **tu primer reel.** Siempre se arma igual, en **4 pasos:**'},{k:'card', card:'reel'}],
+  c_formatos: [{k:'say', t:'Y esto es clave: **cada video le habla a un tipo de persona distinta.** Mirá el embudo por colores:'},{k:'card', card:'funnel'},
+    {k:'say', t:'**Cada reel subilo a las 4 redes:** Instagram, TikTok, YouTube Shorts y Facebook. Y ojo: **los primeros 1 o 2 meses suele ir flojo,** porque el algoritmo todavía no sabe quién sos. **Con 2 o 3 reels por semana** empieza a entenderte. **No aflojes.**'}],
+  n_5: [{k:'say', t:'Gracias por la honestidad. **Eso es tu norte:** volvé a leerlo cuando dudes.'}]
 };
 function buildScript(){
   const B = [];
@@ -1049,20 +1133,21 @@ function buildScript(){
     st.fields.forEach(f=>{
       const grp = f.group && f.group!==prevG ? f.group : null; prevG = f.group || prevG;
       if(f.kind==='yesno'){
-        B.push({k:'say', html:()=>'<p class="vt">'+esc(f.label)+'</p>'+(f.hint?'<p class="hint">'+esc(f.hint)+'</p>':'')});
+        B.push({k:'say', html:()=>'<p class="vt">'+esc(f.label)+'</p>'+(f.hint?'<p class="hint">'+fmt(f.hint)+'</p>':'')});
         f.items.forEach((it,k)=>B.push({k:'ask', f, sub:k}));
       } else B.push({k:'ask', f, grp});
       (AFTER[f.id]||[]).forEach(c=>B.push(c));
     });
     if(st.done) B.push({k:'card', card:'done', st});
-    B.push({k:'go', label: si<STEPS.length-1 ? 'Siguiente parada: '+STEPS[si+1].t+' →' : 'Ver mi tarjeta ★'});
+    if(si<STEPS.length-1) B.push({k:'go', label:'Siguiente parada: '+STEPS[si+1].t+' →'});
   });
+  B.push({k:'say', t:'**Antes de ver tu tarjeta,** necesito que me pegues **el link de tu carpeta de Drive** que te mandé por WhatsApp.'});
+  B.push({k:'say', html:()=>'<p class="vt">Ahí subo <b>todo lo que armamos,</b> a tu carpeta en la nube. Y con eso trabajamos tu lanzamiento.</p><p class="hint">Abrí la carpeta desde el link de WhatsApp → tocá <b>⋮</b> o <b>Compartir</b> → <b>Copiar enlace</b> → pegalo acá abajo.</p>'});
+  B.push({k:'send'});
+  B.push({k:'go', label:'Ver mi tarjeta ★'});
   B.push({k:'chapter', final:true});
   GUIDE_FINAL.lines.forEach(t=>B.push({k:'say', t}));
   B.push({k:'card', card:'bcard'});
-  B.push({k:'card', card:'pdf'});
-  B.push({k:'say', html:()=>'<p class="vt">Último paso: mandámelo. Pegá abajo el link de tu carpeta de Drive.</p><p class="hint">Te la mandé por WhatsApp con tu nombre. Abrila → tocá <b>⋮</b> o <b>Compartir</b> → <b>Copiar enlace</b> → pegalo acá abajo.</p>'});
-  B.push({k:'send'});
   return B;
 }
 const SCRIPT = buildScript();
@@ -1121,7 +1206,7 @@ async function typing(ms){
   const t = row('l', '<div class="bub typingb"><i></i><i></i><i></i></div>', 'tmp'); toBottom();
   setTalking(true); await wait(ms); t.remove(); setTalking(false);
 }
-function textLen(b){ return b.t ? b.t.length : 90; }
+function textLen(b){ return b.t ? b.t.replace(/\*/g,'').length : 90; }
 function durOf(b){ return Math.max(450, Math.min(1300, textLen(b)*16)); }
 
 function qHTML(b){
@@ -1129,11 +1214,12 @@ function qHTML(b){
   if(b.sub!=null) return '<p class="vt">'+esc(f.items[b.sub])+'</p><span class="qn">'+(b.sub+1)+' DE '+f.items.length+'</span>';
   return (b.grp?'<span class="grp">'+esc(b.grp)+'</span><br>':'')
     + '<p class="vt">'+esc(f.label)+(f.opt?' <span class="opt">(opcional)</span>':'')+'</p>'
-    + (f.hint?'<p class="hint">'+esc(f.hint)+'</p>':'')
+    + (f.hint?'<p class="hint">'+fmt(f.hint)+'</p>':'')
     + (f.ex?'<div class="ex"><b>EJEMPLO DE LUNA</b><strong>“'+esc(f.ex)+'”</strong></div>':'');
 }
 function cardHTML(b){
   const c = b.card;
+  if(c==='reel') return '<div class="mcard" data-live="reel">'+liveHTML('reel')+'</div>';
   if(c==='ladder'||c==='pillars'||c==='funnel') return '<div class="mcard'+(c==='funnel'?' bare':'')+'">'+visual(c)+'</div>';
   if(c==='feed'||c==='bcard') return '<div class="mcard bare" data-live="'+c+'">'+liveHTML(c)+'</div>';
   if(c==='persona'||c==='pos'||c==='bio') return '<div class="mcard" data-live="'+c+'">'+liveHTML(c)+'</div>';
@@ -1143,10 +1229,6 @@ function cardHTML(b){
       const t = typeof d==='string'?d:d.t, s = typeof d==='string'?'':(d.s||'');
       return '<div class="chk '+(o[k]?'on':'')+'" data-done="'+b.st.id+'" data-k="'+k+'"><span class="box"></span><span>'+esc(t)+(s?'<small>'+esc(s)+'</small>':'')+'</span></div>'; }).join('')
       + '<p class="note" style="margin-top:8px">No hace falta tener todo para seguir.</p></div>'; }
-  if(c==='pdf') return '<div class="mcard"><h3>Guardala y seguí</h3><div class="btnrow"><button class="btnw" data-pdf="1">⬇ Guardar mi tarjeta en PDF</button></div>'
-    + '<p class="note">Se abre la ventana de imprimir: elegí «Guardar como PDF».</p>'
-    + '<div class="after"><a href="'+GUIA_URL+'" target="_blank" rel="noopener"><b>🚀 Tu próximo lanzamiento</b><p>La Guía de Lanzamiento te da el plan día por día. Usá esta tarjeta como base.</p></a>'
-    + '<details><summary><b>💸 Cómo se gana dinero (después)</b><p>6 niveles, de menos a más audiencia. Tocá para ver.</p></summary><ol><li>Streaming: crece con cada tema que sacás.</li><li>Shows en vivo: donde está la mayor parte del dinero.</li><li>Licencias: publicidades, series o videos.</li><li>Enseñar lo que sabés.</li><li>Marcas y colaboraciones pagas.</li><li>Producir o escribir para otros.</li></ol><p style="margin-top:8px">Publicidad paga: solo para amplificar algo que ya funcionó solo.</p></details></div></div>';
   return '';
 }
 function sceneHTML(b, live){
@@ -1158,9 +1240,12 @@ function sceneHTML(b, live){
     + '<div class="scene-t'+(live?' in':'')+'"><span class="ps">'+kick+'</span><h3>'+esc(b.final?'Tu tarjeta de marca':b.st.t)+'</h3>'+(b.st?'<span class="ps dim">⏱ '+b.st.min+' MIN</span>':'')+'</div></div>';
 }
 /* "Luna" (la artista de ejemplo) siempre en negrita en lo que dice Larry */
+const NS = 'Todavía no lo sé';
+function fmt(t){ return esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); }
 function lunaB(h){ return h.replace(/>([^<]*)/g, (m, t) => '>' + t.replace(/\bLuna\b/g, '<b class="lb">Luna</b>')); }
 function larryPart(b, live){
-  if(b.k==='say') return row('l', lunaB('<div class="bub">'+(b.html ? b.html() : '<p class="vt">'+esc(b.fn ? b.fn() : b.t)+'</p>')+'</div>'));
+  if(b.k==='say'){ const t = b.html ? null : (b.fn ? b.fn() : b.t); const hito = !!t && t.charAt(0)==='!';
+    return row('l', lunaB('<div class="bub'+(hito?' hito':'')+'">'+(b.html ? b.html() : '<p class="vt">'+fmt(hito ? t.slice(1) : t)+'</p>')+'</div>')); }
   if(b.k==='ask') return row('l', lunaB('<div class="bub">'+qHTML(b)+'</div>'));
   if(b.k==='card') return row('l', cardHTML(b), 'wide');
   if(b.k==='chapter'){ setSide(b, live); return row('c', sceneHTML(b, live)); }
@@ -1170,6 +1255,7 @@ function larryPart(b, live){
 function ansHTML(f, sub){
   const v = S[f.id];
   if(sub!=null && sub!=='') return ((v||{})[sub]==='si') ? 'Sí ✓' : 'Todavía no';
+  if(f.id==='v_tipo' && S.v_tipo && S.v_tipo!==NS) return '<span style="'+fontStyle(S.v_tipo).replace(/font-size:[^;]+;?/,'')+';font-size:18px">'+esc(fontLabel(S.v_tipo))+'</span>';
   if(f.kind==='colors') return '<span class="sw">'+S.v_colores.map(c=>'<i style="background:'+c+'"></i>').join('')+'</span>';
   if(f.kind==='traps') return S[f.id+'_none'] ? 'No caigo en ninguna 💪' : (Array.isArray(v)&&v.length ? esc(v.join(' · ')) : '<span class="skip">—</span>');
   if(Array.isArray(v)) return v.length ? esc(v.join(' · ')) : '<span class="skip">— lo dejo para después</span>';
@@ -1219,7 +1305,7 @@ function openComposer(ph, valNow, onSend){
 }
 function openInput(i){
   closeInput();
-  if(i<0){ hintLine('¿Querés cambiar algo? Tocá cualquiera de tus respuestas.'); qb('⬇ Mi tarjeta en PDF','',printAll); return; }
+  if(i<0){ hintLine('¿Querés cambiar algo? Tocá cualquiera de tus respuestas.'); if(S._pdf && !S._sent) qb('⬇ Descargar en PDF','',printAll); return; }
   const b = SCRIPT[i];
   if(b.k==='go'){ qb(b.label, 'pri', ()=>finish(i, ()=>row('u','<div class="ubub">'+esc(b.label)+'</div>'))); return; }
   if(b.k==='send'){ openSend(i); return; }
@@ -1229,9 +1315,11 @@ function openInput(i){
     qb('Sí', '', ()=>pick('si')); qb('Todavía no', '', ()=>pick('no')); return;
   }
   const skip = ()=>finish(i, ()=>userAns(f));
+  const nose = (pre)=>()=>finish(i, ()=>{ if(pre) pre(); S[f.id] = (f.kind==='chips'||f.kind==='traps') ? [NS] : NS; if(f.kind==='traps') S[f.id+'_none']=false; save(); refreshLive(); userAns(f); });
   if(f.kind==='text' || f.kind==='suggest' || f.kind==='area'){
     if(f.kind==='suggest') f.chips.forEach(c=>qb(c, 'chip', ()=>{ const cur=cin.value.trim(); cin.value = cur ? (cur.includes(c)?cur:cur+' + '+c) : c+' '; grow(); cin.focus(); }));
     if(f.tpl) qb('✨ Armar borrador con mis respuestas', 'chip', ()=>{ cin.value = spotifyDraft(); grow(); cin.focus(); toast('Borrador listo: cambialo a tu manera'); });
+    qb('🤷 '+NS, 'ghost', nose());
     if(f.opt) qb('Saltar →', 'ghost', skip);
     openComposer(f.ph || (f.kind==='area' ? 'Escribí como te salga…' : 'Escribí acá…'), S[f.id], ()=>{
       const v = cin.value.trim(); if(!v){ toast(f.opt ? 'Escribí algo o tocá Saltar' : 'Escribí tu respuesta (mirá el ejemplo de Luna)'); return; }
@@ -1240,7 +1328,9 @@ function openInput(i){
     return;
   }
   if(f.kind==='choice'){
-    f.options.forEach(o=>qb(o.v, '', ()=>finish(i, ()=>{ S[f.id]=o.v; save(); refreshLive(); userAns(f); }), o.s, f.id==='v_tipo' ? FONTMAP[o.v].replace(/font-size:[^;]+;?/,'') : ''));
+    if(f.id==='v_tipo') qb('🔎 Buscar otra tipografía', 'chip', ()=>openFontPicker(i));
+    f.options.forEach(o=>qb(o.v, '', ()=>finish(i, ()=>{ S[f.id]=o.v; save(); refreshLive(); userAns(f); }), o.s, f.id==='v_tipo' ? fontStyle(o.v).replace(/font-size:[^;]+;?/,'') : ''));
+    qb('🤷 '+NS, 'ghost', nose());
     if(f.opt) qb('Saltar →', 'ghost', skip);
     return;
   }
@@ -1248,13 +1338,21 @@ function openInput(i){
   const w = row('l', '<div class="mcard"><div class="wfield" data-field="'+f.id+'">'+inputHTML(f)+'</div><div class="wfoot"><button class="btnp" type="button">Listo ✓</button></div></div>', 'wide');
   toBottom();
   hintLine('Elegí arriba y tocá <b style="color:#7fff5f">Listo</b> ↑');
+  qb(f.kind==='colors' ? '🤷 '+NS+' (dejo estos)' : '🤷 '+NS, 'ghost', f.kind==='colors' ? ()=>finish(i, ()=>{ w.remove(); save(); userAns(f); }) : nose(()=>w.remove()));
   if(f.opt) qb('Saltar →', 'ghost', ()=>{ w.remove(); skip(); });
   w.querySelector('.btnp').onclick = ()=>{
-    if(f.kind==='chips' && !(S[f.id]||[]).length && !f.opt){ toast('Elegí al menos una'); return; }
+    if(f.kind==='chips' && !(S[f.id]||[]).length && !f.opt){ toast('Elegí al menos una, o tocá «Todavía no lo sé»'); return; }
     if(f.kind==='traps' && !filled(f)){ toast('Tocá las que te pasan, o «No caigo en ninguna»'); return; }
     if(f.kind==='colors') save();
     finish(i, ()=>{ w.remove(); refreshLive(); userAns(f); });
   };
+}
+function openFontPicker(i){
+  const f = fieldOf('v_tipo'); closeInput();
+  const w = row('l', '<div class="mcard"><h3>🔎 Elegí tu tipografía</h3><p class="note" style="margin-top:0">Así se vería tu nombre. Buscá por nombre o probá de la lista.</p><div class="wfield" data-field="v_tipo-pick">'+fontPickerHTML()+'</div><div class="wfoot"><button class="btnp" type="button">Listo ✓</button></div></div>', 'wide');
+  toBottom(); hintLine('Tocá una letra y después <b style="color:#7fff5f">Listo</b> ↑');
+  qb('← Volver a las opciones', 'ghost', ()=>{ w.remove(); openInput(i); });
+  w.querySelector('.btnp').onclick = ()=>{ if(!S.v_tipo || S.v_tipo.indexOf('font:')!==0){ toast('Tocá una tipografía de la lista'); return; } finish(i, ()=>{ w.remove(); refreshLive(); userAns(f); }); };
 }
 function grow(){ cin.style.height='auto'; cin.style.height = Math.min(cin.scrollHeight+6, 190)+'px'; }
 cin.addEventListener('input', grow);
@@ -1273,7 +1371,7 @@ function inputHTML(f){
       + `<input type="text" class="other" data-other="${f.id}" placeholder="+ Otra: escribila y tocá Enter" style="margin-top:10px">`
       + (f.max ? `<div class="chips-note">Elegí hasta ${f.max} · ${sel.length}/${f.max}</div>` : '');
   }
-  if(f.kind==='choice') return `<div class="choice">${f.options.map(o=>`<button type="button" class="${v===o.v?'sel':''}" data-ch="${f.id}" data-v="${esc(o.v)}" ${f.id==='v_tipo'?`style="${FONTMAP[o.v]}"`:''}>${esc(o.v)}<small style="font-family:Barlow;text-transform:none;letter-spacing:0;font-weight:400;font-size:13px">${esc(o.s||'')}</small></button>`).join('')}</div>`;
+  if(f.kind==='choice') return `<div class="choice">${f.options.map(o=>`<button type="button" class="${v===o.v?'sel':''}" data-ch="${f.id}" data-v="${esc(o.v)}" ${f.id==='v_tipo'?`style="${fontStyle(o.v)}"`:''}>${esc(o.v)}<small style="font-family:Barlow;text-transform:none;letter-spacing:0;font-weight:400;font-size:13px">${esc(o.s||'')}</small></button>`).join('')}</div>`;
   if(f.kind==='colors'){ const names=['Fondo','Texto','Color que resalta','Ropa y decorado'];
     return `<div class="colors">${S.v_colores.map((c,k)=>`<label><input type="color" data-color="${k}" value="${c}">${names[k]}</label>`).join('')}</div>`; }
   if(f.kind==='yesno'){ const o = v||{};
@@ -1299,7 +1397,7 @@ let EDITING = null;
 function openEdit(fid){
   const f = fieldOf(fid); EDITING = fid;
   const m = $('#modal');
-  m.innerHTML = '<div class="sheet"><span class="ps">EDITAR RESPUESTA</span><h3>'+esc(f.label)+'</h3><div class="wfield" data-field="'+fid+'">'+inputHTML(f)+'</div><div class="wfoot"><button class="btnp" type="button" data-close="1">Guardar ✓</button></div></div>';
+  m.innerHTML = '<div class="sheet"><span class="ps">EDITAR RESPUESTA</span><h3>'+esc(f.label)+'</h3><div class="wfield" data-field="'+fid+'">'+inputHTML(f)+'</div>'+(fid==='v_tipo'?fontPickerHTML():'')+'<div class="wfoot"><button class="btnp" type="button" data-close="1">Guardar ✓</button></div></div>';
   m.hidden = false;
   const first = m.querySelector('input[type=text],textarea'); if(first && !TOUCH) first.focus();
 }
@@ -1312,6 +1410,7 @@ function closeEdit(){
 document.addEventListener('input', e=>{
   const t = e.target;
   if(t.dataset.f){ S[t.dataset.f] = t.value; save(); refreshLive(); }
+  if(t.dataset.fsearch!==undefined){ const l = t.parentNode.querySelector('[data-flist]'); if(l) l.innerHTML = fontListHTML(t.value); }
   if(t.dataset.color!==undefined){ S.v_colores[+t.dataset.color] = t.value; save(); refreshLive(); }
 });
 document.addEventListener('keydown', e=>{
@@ -1323,7 +1422,7 @@ document.addEventListener('change', e=>{ if(e.target.dataset && e.target.dataset
 document.addEventListener('click', e=>{
   if(e.target.id==='modal'){ closeEdit(); return; }
   if(e.target.id==='scrim'){ document.body.classList.remove('menu'); return; }
-  const b = e.target.closest('[data-edit],[data-tog],[data-none],[data-ch],[data-yn],[data-done],[data-copy],[data-close],[data-ins],[data-pdf],[data-jump]'); if(!b) return;
+  const b = e.target.closest('[data-font],[data-edit],[data-tog],[data-none],[data-ch],[data-yn],[data-done],[data-copy],[data-close],[data-ins],[data-pdf],[data-jump]'); if(!b) return;
   const d = b.dataset;
   if(d.edit){ openEdit(d.edit); return; }
   if(d.close){ closeEdit(); return; }
@@ -1333,6 +1432,7 @@ document.addEventListener('click', e=>{
     if(a.includes(d.v)) a = a.filter(x=>x!==d.v); else { if(f.max && a.length>=f.max){ toast('Máximo '+f.max+'. Tocá una elegida para sacarla.'); return; } a=[...a,d.v]; }
     S[d.tog]=a; if(f.kind==='traps') S[d.tog+'_none']=false; save(); rerenderField(d.tog); refreshLive(); return; }
   if(d.none){ S[d.none]=[]; S[d.none+'_none']=!S[d.none+'_none']; save(); rerenderField(d.none); return; }
+  if(d.font){ S.v_tipo = 'font:'+d.font; save(); document.querySelectorAll('.fbtn').forEach(x=>x.classList.toggle('sel', x===b)); refreshLive(); refreshAnswers('v_tipo'); return; }
   if(d.ch){ S[d.ch]=d.v; save(); rerenderField(d.ch); refreshLive(); return; }
   if(d.yn){ const o=S[d.yn]||{}; o[d.k]=d.v; S[d.yn]=o; save(); rerenderField(d.yn); return; }
   if(d.done){ const o=S['done_'+d.done]||{}; o[d.k]=!o[d.k]; S['done_'+d.done]=o; save(); b.classList.toggle('on', !!o[d.k]); return; }
@@ -1370,6 +1470,7 @@ function answerText(f){
   const v = S[f.id];
   if(f.kind==='yesno') return f.items.map((it,k)=>`${(v||{})[k]==='si'?'Sí':((v||{})[k]==='no'?'Todavía no':'—')} · ${it}`).join('\n');
   if(f.kind==='traps') return S[f.id+'_none'] ? 'Ninguna' : val(f.id);
+  if(f.id==='v_tipo' && S.v_tipo && S.v_tipo.indexOf('font:')===0) return 'Tipografía: '+fontLabel(S.v_tipo);
   if(f.kind==='colors') return `Fondo ${S.v_colores[0]} · Texto ${S.v_colores[1]} · Acento ${S.v_colores[2]} · Ropa y decorado ${S.v_colores[3]}`;
   return val(f.id);
 }
@@ -1476,14 +1577,21 @@ function buildProfilePrompt(contextText){
 function wspURL(t){ return 'https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(t); }
 function fallbackCard(){
   const n = val('p_nombre') || 'un artista';
-  return row('l', '<div class="mcard"><h3>Plan B: por WhatsApp</h3><p class="note" style="margin-top:0">Guardá el PDF y mandámelo por WhatsApp. No perdés nada.</p><div class="btnrow"><button class="btnw" data-pdf="1">⬇ PDF</button><a class="btnw" target="_blank" rel="noopener" href="'+wspURL('Hola Larry! Soy '+n+'. Te mando mi Manual de Marca 📘')+'">WhatsApp →</a></div></div>', 'wide');
+  return row('l', '<div class="mcard"><h3>¿No encontrás la carpeta?</h3><p class="note" style="margin-top:0">Escribime por WhatsApp y te la paso de nuevo. Cuando la tengas, pegá el link acá abajo.</p><div class="btnrow"><a class="btnw" target="_blank" rel="noopener" href="'+wspURL('Hola Larry! Soy '+n+'. No encuentro el link de mi carpeta de Drive para el Manual de Marca 📘')+'">Pedirle la carpeta a Larry →</a></div></div>', 'wide');
 }
 function successCard(){
   const n = val('p_nombre');
-  return row('l', '<div class="mcard"><h3>✓ ¡Listo, ya lo tengo!</h3><p class="note" style="margin-top:0">Subí tus respuestas, tu perfil de artista y tu prompt para IA a tu carpeta de Drive.</p><div class="btnrow"><a class="btnp" style="text-decoration:none" target="_blank" rel="noopener" href="'+wspURL('Hola Larry! Ya te mandé mi Manual de Marca 📘 Soy '+n)+'">Avisarme por WhatsApp →</a></div></div>', 'wide');
+  return row('l', '<div class="mcard"><h3>✓ ¡Listo, ya está en tu carpeta!</h3><p class="note" style="margin-top:0">Subí tus respuestas, tu perfil de artista y tu prompt para IA a tu carpeta de Drive.</p><div class="btnrow"><a class="btnp" style="text-decoration:none" target="_blank" rel="noopener" href="'+wspURL('Hola Larry! Ya te mandé mi Manual de Marca 📘 Soy '+n)+'">Avisarme por WhatsApp →</a></div></div>', 'wide');
+}
+/* Si la subida a Drive no anda: descargar el PDF y seguir hasta la tarjeta */
+let SEND_FAILED = false;
+function pdfFailCard(){
+  const n = val('p_nombre') || 'un artista';
+  return row('l', '<div class="mcard"><h3>Plan B: descargalo en PDF</h3><p class="note" style="margin-top:0">Probá pegar el link de nuevo. Si sigue sin andar, <b>descargá tus respuestas en PDF</b> y mandámelas por WhatsApp. No perdés nada.</p><div class="btnrow"><button class="btnw" data-pdf="1">⬇ Descargar en PDF</button><a class="btnw" target="_blank" rel="noopener" href="'+wspURL('Hola Larry! Soy '+n+'. No me anduvo el link de Drive, te mando el Manual de Marca en PDF 📘')+'">Mandarlo por WhatsApp →</a></div></div>', 'wide');
 }
 function openSend(i){
-  qb('No tengo carpeta', 'ghost', ()=>{ row('u','<div class="ubub">No tengo carpeta</div>'); row('l','<div class="bub"><p class="vt">Sin drama. Hacelo por acá:</p></div>'); fallbackCard(); toBottom(); });
+  if(SEND_FAILED) qb('⬇ Descargar en PDF y ver mi tarjeta', 'pri', ()=>{ printAll(); S._pdf = 1; save(); finish(i, ()=>row('u','<div class="ubub">Lo descargo en PDF</div>')); });
+  qb('No la encuentro', 'ghost', ()=>{ row('u','<div class="ubub">No la encuentro</div>'); row('l','<div class="bub"><p class="vt">Sin drama, <b>te la paso de nuevo:</b></p></div>'); fallbackCard(); toBottom(); });
   openComposer('https://drive.google.com/drive/folders/...', '', ()=>{
     const link = cin.value.trim();
     if(!/drive\.google\.com/.test(link)){ row('l','<div class="bub err"><p class="vt">Mmm, eso no parece un link de Drive. Tiene que empezar con https://drive.google.com/…</p></div>'); toBottom(); return; }
@@ -1506,13 +1614,13 @@ function doSend(i, driveLink){
     return fetch(MANUAL_APPS_SCRIPT_URL,{method:'POST',body:JSON.stringify({artista,driveLink,capitulos,perfilTexto,promptTexto})})
       .then(r=>r.json()).then(res=>{
         setTalking(false);
-        if(res&&res.ok){ S._sent = driveLink; save(); set('¡Subido! 🎉'); successCard(); toBottom(); pos = i+1; savePos(); openInput(-1); }
+        if(res&&res.ok){ S._sent = driveLink; save(); set('¡Subido! 🎉'); successCard(); toBottom(); pos = i+1; savePos(); setTimeout(()=>stepFrom(i+1), 500); }
         else fail((res&&res.error)||'No se pudo enviar. Revisá el link de la carpeta.');
       });
   }).catch(()=>fail('No se pudo conectar. Puede ser tu internet.'));
   function fail(m){
     setTalking(false); set('Uy, falló: '+m); msg.querySelector('.bub').classList.add('err');
-    fallbackCard(); toBottom(); openInput(i);
+    pdfFailCard(); toBottom(); SEND_FAILED = true; openInput(i);
   }
 }
 
@@ -1532,6 +1640,7 @@ function printAll(){
    ARRANQUE: reconstruye la charla guardada y sigue donde quedaste
    ════════════════════════════════════════════════════════════════════ */
 function rebuild(){
+  if(S.v_tipo) fontStyle(S.v_tipo);
   tin.innerHTML = '<div class="intro"><img class="logo" src="'+(LOGO_A||LOGO)+'" alt="Larry Prod"'+(LOGO_A?'':' style="opacity:0"')+'><h1>Tu marca en '+STEPS.length+' pasos.</h1><div class="byline">by <a href="https://www.instagram.com/larry.prod" target="_blank" rel="noopener">@larry.prod</a></div><div class="ps">CHAT PRIVADO · SE GUARDA SOLO</div></div>'
     + (()=>{ const ST = studioLayers(); return '<div class="scene" id="sc-cover"><div class="sbox">'+ST.back+'<div class="larry" data-frame="base"><div class="bob">'+LARRY_SVG.base+'</div></div>'+propHTML(GUIDE_COVER,'')+'</div><div class="scene-t"><span class="ps">TU GUÍA</span><h3>Larry</h3><a class="ps dim iglink" href="https://www.instagram.com/larry.prod" target="_blank" rel="noopener">PRODUCTOR · @LARRY.PROD ↗</a></div></div>'; })();
   setSide(null, true);
@@ -1539,7 +1648,7 @@ function rebuild(){
   for(let i=0; i<pos; i++){
     const b = SCRIPT[i];
     if(b.k==='go'){ row('u','<div class="ubub">'+esc(b.label)+'</div>'); continue; }
-    if(b.k==='send'){ if(S._sent){ row('u','<div class="ubub">'+esc(S._sent)+'</div>'); successCard(); } continue; }
+    if(b.k==='send'){ if(S._sent){ row('u','<div class="ubub">'+esc(S._sent)+'</div>'); successCard(); } else if(S._pdf) row('u','<div class="ubub">Lo descargo en PDF</div>'); continue; }
     larryPart(b, false);
     if(b.k==='ask') userAns(b.f, b.sub);
   }
