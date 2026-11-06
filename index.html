@@ -112,10 +112,9 @@
   .bub .hint{font-size:14.5px;color:#5f5a52;margin-top:6px;line-height:1.42}
   .bub .ex{margin-top:9px;background:#f6f3ec;border:2px dashed #cfc7b7;padding:7px 10px;font-size:14.5px;color:#3d3a35;line-height:1.4}
   .bub .ex strong{font-weight:700;color:#141414}
-  .bub .vt b,.bub .hint b{font-weight:700;color:#000;background:linear-gradient(transparent 58%, #ffe680 58%);padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-  .bub .vt b{-webkit-text-stroke:1px #000}
-  .bub .vt u,.bub .hint u{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px;text-decoration-color:#2a79d3}
-  .bub.hito .vt b{background:none}
+  .bub .vt b,.bub .hint b{font-weight:700;color:#000}
+  .bub .vt b{-webkit-text-stroke:.45px #000}
+  .bub .vt u,.bub .hint u{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
   .bub.hito{background:#ffd54a;box-shadow:4px 4px 0 #000;position:relative;padding-top:24px}
   .bub.hito::before{content:'★ CLAVE';position:absolute;left:12px;top:8px;font-family:'Press Start 2P',monospace;font-size:7.5px;color:#7a5a00}
   .bub.hito .vt{font-size:27px;line-height:1.08;-webkit-text-stroke:.5px #141414}
@@ -693,13 +692,13 @@ const PHOTOS = {"apollo":"data:image/jpeg;base64,/9j/4gIcSUNDX1BST0ZJTEUAAQEAAAI
    Tipos de campo: text · area · chips · suggest · choice · colors · yesno · traps
    ════════════════════════════════════════════════════════════════════ */
 /* Cómo se escriben los mensajes de Larry:
-   **así** = negrita (lo importante de cada frase, con marcador amarillo)
-   __así__ = subrayado (azul)
+   **así** = negrita (lo importante de cada frase)
+   __así__ = subrayado fino (usar uno u otro, nunca los dos en el mismo mensaje)
    ! al principio = frase clave resaltada (cartel amarillo) */
 const STEPS = [
 {
   id:'cap1', t:'Punto de partida', min:3,
-  guide:{"anim":"slide","prop":"flag","lines":["Primera parada: **ver dónde estás hoy.**","Son toques rápidos y **no hay respuestas malas.** __Si no sabés qué es algo,__ poné **\"Todavía no\"** y seguí."]},
+  guide:{"anim":"slide","prop":"flag","lines":["Primera parada: **ver dónde estás hoy.**","Son toques rápidos y **no hay respuestas malas.** Si no sabés qué es algo, poné **\"Todavía no\"** y seguí."]},
   why:'Antes de construir nada, mirá <b>dónde estás hoy</b>. Son toques rápidos: no hay respuestas malas, es solo tu foto de hoy.',
   fields:[
     {id:'p_nombre', kind:'text', label:'¿Cuál es tu nombre de artista?', hint:'Lo vas a ver aparecer en **tu feed, tu perfil y tu tarjeta.**', ex:'Luna Vega', ph:'Como aparece en Spotify'},
@@ -751,7 +750,7 @@ const STEPS = [
 },
 {
   id:'cap3', t:'Tu oyente', min:8,
-  guide:{"anim":"pop","prop":"heart","lines":["Tu oyente. **No le podés hablar a todo el mundo.**","Imaginá a **UNA persona** que __se emociona con tus temas.__ Con lo que elijas **te tiro una idea de reel.**"]},
+  guide:{"anim":"pop","prop":"heart","lines":["Tu oyente. **No le podés hablar a todo el mundo.**","Imaginá a **UNA persona** que se emociona con tus temas. Con lo que elijas **te tiro una idea de reel.**"]},
   why:'No le podés hablar a todo el mundo.',
   visual:'persona',
   fields:[
@@ -849,7 +848,7 @@ const STEPS = [
 },
 {
   id:'cap6', t:'Tu norte', min:8,
-  guide:{"anim":"rise","prop":"star","look":"up","lines":["Última parada: **tu norte.**","!Tres preguntas sin respuesta correcta.","**Escribí como si nadie lo fuera a leer.** __Si las contestás con honestidad,__ todo lo demás tiene sentido."]},
+  guide:{"anim":"rise","prop":"star","look":"up","lines":["Última parada: **tu norte.**","!Tres preguntas sin respuesta correcta.","**Escribí como si nadie lo fuera a leer.** Si las contestás con honestidad, todo lo demás tiene sentido."]},
   why:'Tres preguntas sin respuesta correcta.',
   fields:[
     {id:'n_porque', kind:'area', label:'¿Por qué hacés música?', hint:'**La respuesta real,** no la que quedaría bien en una entrevista.',
