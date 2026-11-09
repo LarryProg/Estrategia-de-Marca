@@ -718,6 +718,8 @@ const STEPS = [
   why:'Antes de construir nada, mirá <b>dónde estás hoy</b>. Son toques rápidos: no hay respuestas malas, es solo tu foto de hoy.',
   fields:[
     {id:'p_nombre', kind:'text', label:'¿Cuál es tu nombre de artista?', hint:'Lo vas a ver aparecer en __tu feed, tu perfil y tu tarjeta.__', ex:'Luna Vega', ph:'Como aparece en Spotify'},
+    {id:'p_quien', kind:'area', label:'¿Quién sos? Describite en dos oraciones', hint:'Como persona y como artista. **Sin palabras vagas** como "versátil" o "apasionado": __contá algo que solo te pase a vos.__',
+     ex:'Soy una chica de pueblo que se mudó sola a Valencia y escribe de noche. Hago canciones íntimas para los que se sienten lejos de casa.'},
     {id:'d_check', kind:'yesno', label:'¿Esto ya lo tenés?', hint:'Tocá **Sí** o **Todavía no** en cada línea. Si no sabés qué es algo, poné Todavía no.',
      items:[
       'Sé qué estilo de música hago, en palabras concretas (no solo "trap" o "pop")',
@@ -1093,6 +1095,7 @@ function bcardHTML(){
   return `<div class="bcard" style="background:${bg};color:${tx}">
     <span class="mono">Tarjeta de marca · @larry.prod</span>
     <h3 style="${fs};font-size:clamp(28px,7vw,44px);line-height:1.05">${esc(name)}</h3>
+    ${val('p_quien') ? `<p class="pos" style="font-style:italic;opacity:.85">“${esc(val('p_quien'))}”</p>` : ''}
     <p class="pos">${esc(posicionamiento(false))}</p>
     <div class="bgrid">
       ${box('Mi oyente', esc([val('o_nombre'), val('o_dia')].filter(Boolean).join(' — ')) + (val('o_momento')?'<br><span style="opacity:.75">Me escucha: '+esc(val('o_momento'))+'</span>':''))}
@@ -1123,7 +1126,8 @@ function refreshLive(){ document.querySelectorAll('[data-live]').forEach(el=>{ e
    go = botón para seguir · send = envío final
    ════════════════════════════════════════════════════════════════════ */
 const AFTER = {
-  p_nombre: [{k:'say', fn:()=>'¡Un gusto, **'+(val('p_nombre')||'artista')+'**! 🤝 Primero, __una foto rápida de dónde estás hoy.__'}],
+  p_nombre: [{k:'say', fn:()=>'¡Un gusto, **'+(val('p_nombre')||'artista')+'**! 🤝 Antes de nada, __quiero conocerte un poco.__'}],
+  p_quien: [{k:'say', t:'Guardado. **Acá suele estar lo que te hace distinto,** __lo vamos a usar en todo el manual.__ Ahora, una foto rápida de dónde estás hoy.'}],
   d_traps: [{k:'say', html:()=>{ const f=fieldOf('d_traps'); const sel=(S.d_traps||[]).filter(x=>x!==NS);
     if(!sel.length) return '<p class="vt">¡Bien ahí! <b>Seguimos.</b></p>';
     return '<p class="vt">Tranqui, <b>nos pasa a casi todos.</b> Así salís:</p>'+f.items.filter(t=>sel.includes(t.t)).map(t=>'<p class="fixl">'+t.e+' <b>'+esc(t.t)+'</b> '+esc(t.fix)+'</p>').join(''); }}],
@@ -1172,6 +1176,9 @@ const SCRIPT = buildScript();
 const CHAPTERS = SCRIPT.map((b,i)=>b.k==='chapter'?i:-1).filter(i=>i>=0);
 let pos = 0;
 try { pos = parseInt(localStorage.getItem('mm3_pos')||'0',10)||0; } catch(e){}
+/* v2 del guion: se agregó "¿Quién sos?" (pregunta + respuesta de Larry) después del nombre.
+   A quien ya iba más adelante se le corre su lugar 2 mensajes, así no se le repite ni se le salta nada. */
+try { if(localStorage.getItem('mm3_v')!=='2'){ const qi = SCRIPT.findIndex(b=>b.k==='ask' && b.f && b.f.id==='p_quien'); if(pos>=qi && qi>0) pos += 2; localStorage.setItem('mm3_v','2'); localStorage.setItem('mm3_pos', String(pos)); } } catch(e){}
 function savePos(){ try { localStorage.setItem('mm3_pos', String(pos)); } catch(e){} refreshSide(); }
 
 /* ════════════════════════════════════════════════════════════════════
