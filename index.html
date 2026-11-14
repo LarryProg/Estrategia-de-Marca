@@ -1697,7 +1697,8 @@ function rebuild(){
 }
 (function(){
   const gate=$('#gate'), inp=$('#gateIn'), err=$('#gateErr');
-  let ok=false; try{ ok = localStorage.getItem('mm3_ok')==='1'; }catch(e){}
+  // sin contraseña: el manual se abre directo (la pantalla de clave queda apagada)
+  const ok=true;
   function start(){ rebuild(); }
   if(ok){ gate.style.display='none'; start(); }
   function tryIt(){
